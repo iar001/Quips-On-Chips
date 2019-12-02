@@ -5,6 +5,7 @@ import Login from './components/Login';
 import Register from './components/Register';
 import Header from './components/Header'
 import ChipsList from './components/ChipsList'
+import SingleChip from './components/SingleChip';
 
 import { Route, Link } from 'react-router-dom';
 import { withRouter } from 'react-router';
@@ -34,7 +35,7 @@ class App extends Component {
     const chips = await getAllChips();
     const currentUser = await verifyUser();
     if (currentUser) {
-      this.setState({ currentUser, chips  })
+      this.setState({ currentUser, chips })
     }
   }
   // -------------- AUTH ------------------
@@ -79,8 +80,15 @@ class App extends Component {
           handleLogout={this.handleLogout}
           currentUser={this.state.currentUser}
         />
-        <ChipsList
-          chips={this.state.chips}
+        <Route exact path="/" render={() => (
+          <ChipsList
+            chips={this.state.chips}
+          />
+        )}/>
+        
+        <Route exact path="/chips/:chipId" render={(props) =>
+          <SingleChip
+            chipId={props.match.params.chipId} />}
         />
         <Route exact path="/login" render={() => (
           <Login

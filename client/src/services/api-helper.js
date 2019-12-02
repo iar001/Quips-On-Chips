@@ -34,7 +34,11 @@ export const verifyUser = async () => {
 export const getAllChips = async () => {
   const resp = await api.get('/chips');
   return resp.data
+}
 
+export const oneSnack = async (id) => {
+  const resp = await api.get(`/chips/${id}`)
+  return resp.data
 }
 
 // export const createComment = async (data) => {
