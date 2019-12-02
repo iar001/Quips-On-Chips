@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
   before_action :set_review, only: [:show, :update, :destroy]
-  before_action :authorize_request, except: %i[index show]
+  before_action :authorize_request, except: %i[index show index_by_chips]
 
 
   # GET /reviews
@@ -24,6 +24,12 @@ class ReviewsController < ApplicationController
     else
       render json: @review.errors, status: :unprocessable_entity
     end
+  end
+
+  def index_by_chips
+    @chip = Chip.find(params[:id])
+    @reviews = @chip.reviews
+    render json: @reviews, include: :chips, status: :ok
   end
 
   # PATCH/PUT /reviews/1
