@@ -101,13 +101,22 @@ Quips on Chips
 | Add Chip Component | This component will allow a logged in user to add a new chip to the site|
 
 
-
-
-]
-
-
-
 **API Endpoint Documentations**
+
+User: 
+
+```
+rails g scaffold User username:string email:string password_digest:string
+```
+
+Chips:
+
+rails g model Chip bag_pic_url:text chip_pic_url:text
+
+Reviews:
+
+rails g model Review cost:integer taste:integer guilt:integer User:references Chip:references
+
 
 ​	a. Show Page:/
 
