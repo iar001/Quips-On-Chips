@@ -116,17 +116,11 @@ Quips on Chips
 ​	d. Update Chip Review: :user/:userID/Chips/:chipId/Update
 
 
-
-
-
 **Dependencies**
 
 ​	1. React-Router-Dom
 
 ​	2. Axios
-
-
-
 
 
 **Timeframes**
@@ -195,3 +189,18 @@ Timeframes
 	6. Log in Page - 1 Hour
 	7. Review Page - 1 Hour
 	8. Styling 3 Hours
+
+Chips
+
+1. Nacho Cheese Doritos 
+2. Cool Ranch Doritos
+3. Original Lays
+4. Original Tostitos
+5. Barbecue Lays
+6. Ruffles
+7. Cheetos
+8. Ruffles Cheddar Sour Cream
+9. Pringles Sour Cream and Onion
+10. Original Pringles
+11. Fritos
+12. Sunchips Harvest Cheddar
