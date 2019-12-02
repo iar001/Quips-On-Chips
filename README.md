@@ -179,17 +179,6 @@ Dependencies
 	2. Axios
 
 
-Timeframes
-	1. Set up Github Correctly - 1 Hour
-	2. Organize Rails and React Components - 1 Hour
-	3. Find info for  Database of Chips - 1 Hour
-	3. Set up database, auth, routes, etc. - 3 Hours
-	4. Show Page - 2 Hours
-	5. Individual Chip Page - 1 Hour
-	6. Log in Page - 1 Hour
-	7. Review Page - 1 Hour
-	8. Styling 3 Hours
-
 Chips
 
 1. Nacho Cheese Doritos 
