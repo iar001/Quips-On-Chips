@@ -92,12 +92,14 @@ Quips on Chips
 | ------------------ | ------------------------------------------------------------ |
 | Header             | This component will render the header.                       |
 | Footer             | This component will render the footer.                       |
-| Chips Show Page    | Will display all the Chips on Main Page                      |
+| Chips Show Page    | Will display all the Chips on Main Page. Also link to each chip page|
 | RegisterForm       | This component will render a register form.                  |
 | LoginForm          | This component will render a login form.                     |
-| Chips Single Page  | Will show ratings, reviews, photos of the individual chip    |
-| Profile Page       | This component will show the user’s reviews                  |
+| Chips Single Page  | Will show ratings, reviews, photos of the individual chip.  Also link to add a review|
+| Profile Page       | This component will show the user’s reviews.  Also be able to update/delete posts |
 | Create Review Page | This component will enable user to add their ratings for a product as well as write a short review |
+| Add Chip Component | This component will allow a logged in user to add a new chip to the site|
+
 
 
 
