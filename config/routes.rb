@@ -6,5 +6,5 @@ Rails.application.routes.draw do
   resources :chips
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
-  get '/chips/:id/reviews', to: 'chips#index_by_reviews'
+  get '/chips/:id/reviews', to: 'reviews#index_by_chips'
 end

@@ -68,4 +68,23 @@ chips = Chip.create([
     bag_pic_url: "https://www.dollargeneral.com/media/catalog/product/cache/b419b4aa07929e5ac1043ffec8c943ea/0/0/00028400147392_0.jpg",
     chip_pic_url: "https://www.snackeroo.com/wp-content/uploads/DSC05746-1024x7681-e1447887502181.jpg",
   }
+]),
+
+users = User.create([
+  {
+    username: "ianrappaport",
+    email: "joystick86@aol.com",
+    password_digest: "hello123"
+  }
+]),
+
+reviews = Review.create([
+  {
+    cost: 4,
+    guilt: 4,
+    taste: 5,
+    review: "Doritos are the best",
+    user: users[0],
+    chip: chips[0]
+  }
 ])
