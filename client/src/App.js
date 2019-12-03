@@ -130,7 +130,9 @@ class App extends Component {
 
         <Route exact path="/chips/:chipId" render={(props) =>
           <SingleChip
-            chipId={props.match.params.chipId} />}
+            chipId={props.match.params.chipId}
+            currentUser={this.state.currentUser}
+          />}
         />
         <Route exact path="/login" render={() => (
           <Login

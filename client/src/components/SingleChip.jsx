@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import { Link, withRouter } from 'react-router-dom';
-import { oneSnack } from '../services/api-helper'
+import { oneSnack, readAllReviews } from '../services/api-helper'
 import { CreateReview } from './CreateReview'
 
 
@@ -9,15 +9,19 @@ export default class SingleChip extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      chip: []
+      chip: [],
+      reviews: []
     }
   }
   async componentDidMount() {
     const chipId = parseInt(this.props.chipId)
     const chip = await oneSnack(chipId)
+    const reviews = await readAllReviews(chipId)
     console.log(chip)
+    console.log(reviews)
     this.setState({
-      chip
+      chip,
+      reviews
     })
   }
 
@@ -48,33 +52,49 @@ export default class SingleChip extends React.Component {
               <h3>Cost:</h3>
               <h3>Guilt: </h3>
             </div>
-
           </div>
         </div>
-        <React.Fragment key={this.props.chipId}>
-          <Link to={`/chips/${this.props.chipId}/review`}>
-            {/* <img className="chip-img" src={chip.bag_pic_url} /> */}
-            <h3>{this.state.chip.name}</h3>
-          </Link>
-        </React.Fragment>
+        {
+          this.props.currentUser
+            ?
+            <>
+              <div id="review">
+                <React.Fragment key={this.props.chipId}>
+                  <Link to={`/chips/${this.props.chipId}/review`}>
+                    {/* <img className="chip-img" src={chip.bag_pic_url} /> */}
+                    <h3>Click Here to Write a Review Of {this.state.chip.name}</h3>
+                  </Link>
+                </React.Fragment>
+              </div>
+            </>
+            :
+            <p>Nothin</p>
+        }
+
+        {/* {props.currentUser
+          ?
+          <>
+            <p>{props.currentUser.username}</p>
+            <button onClick={props.handleLogout}>logout</button>
+          </>
+          :
+          <button onClick={props.handleLoginButton}>Login or Register</button>
+        } */}
 
 
         <div className="sc-review">
-          <div>
-            <h2>Review One</h2>
-          </div>
-          <div>
-            <h2>Review Two</h2>
-          </div>
-          <div>
-            <h2>Review Three</h2>
-          </div>
-          <div>
-            <h2>Review Four</h2>
-          </div>
-          <div>
-            <h2>Review Five</h2>
-          </div>
+          {this.state.reviews.map(review => (
+            <React.Fragment key={review.id}>
+              <div>
+                <h1>Review</h1>
+                <p>Taste: {review.taste}</p>
+                <p>Guilt: {review.guilt}</p>
+                <p>Cost: {review.cost}</p>
+                <p>Review: {review.review}</p>
+              </div>
+
+            </React.Fragment>
+          ))}
         </div>
       </div>
     )
