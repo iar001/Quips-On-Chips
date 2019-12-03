@@ -23,23 +23,35 @@ export default class SingleChip extends React.Component {
   render() {
     return (
       <div>
-        <div className="single-chip">
-          <div id="single-chip-image">
+        <div className="sc">
+          <div id="sc-image-dummy">
             <h1>{this.state.chip.name}</h1>
-            <div id="single-chip-image-div">
-              <img src={this.state.chip.bag_pic_url} />
-              <img src={this.state.chip.chip_pic_url} />
+            <div id="sc-image">
+              <div id="sc-image-inner">
+                <div id="sc-image-front">
+                  <img src={this.state.chip.bag_pic_url} />
+                </div>
+                <div id="sc-image-back">
+                  <img src={this.state.chip.chip_pic_url} />
+                </div>
+              </div>
             </div>
           </div>
 
-          <div id="single-chip-ratings">
-            <h1>Ratings</h1>
-            <h3>Taste: </h3>
-            <h3>Cost:</h3>
-            <h3>Guilt: </h3>
+          <div id="sc-ratings">
+            <div>
+              <h1>Ratings</h1>
+            </div>
+            <div id="sc-categories">
+              <h3>Taste: </h3>
+              <h3>Cost:</h3>
+              <h3>Guilt: </h3>
+            </div>
+
           </div>
         </div>
-        <div className="single-chip-review">
+        
+        <div className="sc-review">
           <div>
             <h2>Review One</h2>
           </div>

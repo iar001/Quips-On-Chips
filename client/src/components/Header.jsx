@@ -3,8 +3,10 @@ import { Link } from 'react-router-dom'
 
 export default function Header(props) {
   return (
-    <header>
-      <h1><Link to='/' onClick={props.resetForm}>Quips on Chips</Link></h1>
+    <header class="header">
+      <div>
+        <h1><Link to='/' onClick={props.resetForm}>Quips on Chips</Link></h1>
+      </div>
       <div>
         {props.currentUser
           ?

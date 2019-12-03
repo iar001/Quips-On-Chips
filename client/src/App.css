@@ -1,5 +1,55 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* HEADER */
+
+.header {
+  background-color: antiquewhite;
+  display: flex;
+  justify-content: space-between; 
+}
+
 
 /* ChipList Styling */
+#cover-img {
+  text-align: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+#cover-img-h2 {
+  color: black;
+  position: absolute;
+  top: 77%;
+  left: 45%;
+}
+
+#arrow-down {
+  color: white;
+  font-size: 4em;
+  position: absolute;
+  top: 85%;
+  left: 48%;
+}
+
+.animated {
+  animation-duration: 2.5s;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+}
+
+.material-icons {
+  margin-top: 1vh;
+  margin-left: 1vh;
+  font-size: 2.5em;
+}
+
 #chips-div-heading {
   background-color: red;
   color: white;
@@ -63,36 +113,67 @@ h1, h2, h3 {
 
 /* Single Chip List Styling */
 
-.single-chip {
+.sc {
   display: flex;
+  justify-content: space-evenly;
 }
 
-#single-chip-image {
-  /* border: 4px solid orange; */
-  width: 50%;
-  /* height: 70%; */
-  /* margin: auto; */
-  margin-top: 0vh;
+
+
+/* Image Flip on Single Cip Page  */
+#sc-image {
+  background-color: transparent;
+  width: 50vh;
+  height: 50vh;
+  perspective: 1000px;
   text-align: center;
+  margin-top: 0vh;
 }
 
-#single-chip-image-div img {
-  width: 25vw;
-  height: 25vh;
-  padding: 5vh 0 5vh 5vh;
+#sc-image-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 1.0s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
-#single-chip-image-div {
-  display: flex;
-  justify-content: left;
+#sc-image:hover #sc-image-inner {
+  transform: rotateY(180deg);
 }
 
-#single-chip-ratings {
+#sc-image-front, #sc-image-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+#sc-image-front {
+  background-color: #bbb;
+  color: black;
+}
+
+#sc-image-back {
+  background-color: #2980b9;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+#sc-ratings {
   margin-left: 10%;
 }
 
-.single-chip-review {
+#sc-categories {
+  margin-top: 50%
+}
+
+.sc-review {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   text-align: center;
+  font-family: 'Maven Pro', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+
 }
