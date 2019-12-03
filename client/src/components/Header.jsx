@@ -15,7 +15,7 @@ export default function Header(props) {
             <button onClick={props.handleLogout}>logout</button>
           </>
           :
-          <button onClick={props.handleLoginButton}>Login/register</button>
+          <button onClick={props.handleLoginButton}>Login or Register</button>
         }
       </div>
     </header>

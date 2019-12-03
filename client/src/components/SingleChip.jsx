@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import { Link, withRouter } from 'react-router-dom';
 import { oneSnack } from '../services/api-helper'
+import { CreateReview } from './CreateReview'
 
 
 export default class SingleChip extends React.Component {
@@ -50,7 +51,14 @@ export default class SingleChip extends React.Component {
 
           </div>
         </div>
-        
+        <React.Fragment key={this.props.chipId}>
+          <Link to={`/chips/${this.props.chipId}/review`}>
+            {/* <img className="chip-img" src={chip.bag_pic_url} /> */}
+            <h3>{this.state.chip.name}</h3>
+          </Link>
+        </React.Fragment>
+
+
         <div className="sc-review">
           <div>
             <h2>Review One</h2>

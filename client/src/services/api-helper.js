@@ -41,15 +41,17 @@ export const oneSnack = async (id) => {
   return resp.data
 }
 
-// export const createComment = async (data) => {
-//   const resp = await api.post('/comments', { comment: data })
-//   return resp.data
-// }
+////////REVIEWS///////
 
-// export const readAllComments = async () => {
-//   const resp = await api.get('/comments')
-//   return resp.data
-// }
+export const createReview = async (data,id) => {
+  const resp = await api.post(`chips/${id}/reviews`, { reviews: data })
+  return resp.data
+}
+
+export const readAllReviews = async (id) => {
+  const resp = await api.get(`chips/${id}/reviews`)
+  return resp.data
+}
 
 // export const updateComment = async (id, data) => {
 //   const resp = await api.put(`/comments/${id}`, { comment: data })
