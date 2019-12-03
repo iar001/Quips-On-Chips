@@ -17,8 +17,6 @@ export default class SingleChip extends React.Component {
     const chipId = parseInt(this.props.chipId)
     const chip = await oneSnack(chipId)
     const reviews = await readAllReviews(chipId)
-    console.log(chip)
-    console.log(reviews)
     this.setState({
       chip,
       reviews
@@ -61,7 +59,6 @@ export default class SingleChip extends React.Component {
               <div id="review">
                 <React.Fragment key={this.props.chipId}>
                   <Link to={`/chips/${this.props.chipId}/review`}>
-                    {/* <img className="chip-img" src={chip.bag_pic_url} /> */}
                     <h3>Click Here to Write a Review Of {this.state.chip.name}</h3>
                   </Link>
                 </React.Fragment>
@@ -70,17 +67,6 @@ export default class SingleChip extends React.Component {
             :
             <p>Nothin</p>
         }
-
-        {/* {props.currentUser
-          ?
-          <>
-            <p>{props.currentUser.username}</p>
-            <button onClick={props.handleLogout}>logout</button>
-          </>
-          :
-          <button onClick={props.handleLoginButton}>Login or Register</button>
-        } */}
-
 
         <div className="sc-review">
           {this.state.reviews.map(review => (
@@ -92,7 +78,6 @@ export default class SingleChip extends React.Component {
                 <p>Cost: {review.cost}</p>
                 <p>Review: {review.review}</p>
               </div>
-
             </React.Fragment>
           ))}
         </div>

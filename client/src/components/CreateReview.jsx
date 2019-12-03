@@ -1,6 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import {createReview } from '../services/api-helper';
+import { createReview } from '../services/api-helper';
 
 class CreateReview extends React.Component {
   constructor(props) {
@@ -25,7 +25,7 @@ class CreateReview extends React.Component {
       reviews: [...prevState.reviews, review],
       reviewForm: {
         cost: 0,
-        taste: 0, 
+        taste: 0,
         guilt: 0,
         review: ""
       }
@@ -45,27 +45,43 @@ class CreateReview extends React.Component {
   render() {
     return (
       <div className="create-form" >
-        <h2>Create a new comment</h2>
+        <h2>Write a New Review</h2>
         <form onSubmit={this.newReview}>
           <p>Taste Score:</p>
-          <input
-            type="text"
-            name="taste"
-            value={this.state.reviewForm.taste}
-            onChange={this.handleFormChange} />
-          <p>Guilt Score:</p>
-          <input
-            type="text"
-            name="guilt"
-            value={this.state.reviewForm.guilt}
-            onChange={this.handleFormChange} />
-          <p>Cost Score:</p>
-          <input
-            type="text"
-            name="cost"
-            value={this.state.reviewForm.cost}
+          <select
+            value={parseInt(this.state.reviewForm).taste}
             onChange={this.handleFormChange}
-          />
+            name="taste">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+
+          <p>Guilt Score:</p>
+          <select
+            value={parseInt(this.state.reviewForm).guilt}
+            onChange={this.handleFormChange}
+            name="guilt">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+          <p>Cost Score:</p>
+          <select
+            value={parseInt(this.state.reviewForm).cost}
+            onChange={this.handleFormChange}
+            name="cost">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+
           <p>Review</p>
           <input
             type="text"
@@ -78,7 +94,7 @@ class CreateReview extends React.Component {
       </div >
     )
   }
-    
+
 
 }
 
