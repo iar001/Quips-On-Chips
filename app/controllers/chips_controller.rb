@@ -18,8 +18,9 @@ class ChipsController < ApplicationController
   # POST /chips
   def create
     @chip = Chip.new(chip_params)
-
+    # @chip.user = @current_user
     if @current_user.chips << @chip
+    # if @chip.save
       render json: @chip, status: :created, location: @chip
     else
       render json: @chip.errors, status: :unprocessable_entity

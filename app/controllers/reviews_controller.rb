@@ -18,7 +18,8 @@ class ReviewsController < ApplicationController
   # POST /reviews
   def create
     @review = Review.new(review_params)
-
+    @chip = Chip.find(params[:chip_id])
+    @review.chip = @chip
     if @current_user.reviews << @review
       render json: @review, status: :created, location: @review
     else
@@ -27,9 +28,9 @@ class ReviewsController < ApplicationController
   end
 
   def index_by_chips
-    @chip = Chip.find(params[:id])
+    @chip = Chip.find(params[:chip_id])
     @reviews = @chip.reviews
-    render json: @reviews, include: :chips, status: :ok
+    render json: @reviews, include: :chip, status: :ok
   end
 
   # PATCH/PUT /reviews/1
@@ -63,6 +64,6 @@ class ReviewsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def review_params
-      params.require(:review).permit(:cost, :taste, :guilt)
+      params.require(:review).permit(:cost, :taste, :guilt, :review)
     end
 end

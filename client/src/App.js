@@ -58,7 +58,7 @@ class App extends Component {
 
   newReview = async (e) => {
     e.preventDefault();
-    const review = await createReview(this.state.reviewForm);
+    const review = await createReview(this.props.chipId, this.props.reviewForm);
     this.setState(prevState => ({
       reviews: [...prevState.reviews, review],
       reviewForm: {
@@ -83,7 +83,6 @@ class App extends Component {
   // -------------- AUTH ------------------
 
   handleLoginButton = () => {
-    debugger
     this.props.history.push("/login")
   }
 
@@ -151,9 +150,9 @@ class App extends Component {
         <Route
           path="/chips/:chipId/review" render={(props) => (
             <CreateReview
-              handleFormChange={this.handleFormChange}
-              reviewForm={this.state.reviewForm}
-              newReview={this.newReview}
+              // handleFormChange={this.handleFormChange}
+              // reviewForm={this.state.reviewForm}
+              // newReview={this.newReview}
               chipId={props.match.params.chipId}
             />
 

@@ -43,8 +43,8 @@ export const oneSnack = async (id) => {
 
 ////////REVIEWS///////
 
-export const createReview = async (data,id) => {
-  const resp = await api.post(`chips/${id}/reviews`, { reviews: data })
+export const createReview = async (id, formData) => {
+  const resp = await api.post(`chips/${id}/reviews`, { review: formData })
   return resp.data
 }
 
