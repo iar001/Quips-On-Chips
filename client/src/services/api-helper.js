@@ -63,8 +63,6 @@ export const updateReview = async (id, formData) => {
   return resp.data
 }
 
-
-
 export const destroyReview = async (id) => {
   const resp = await api.delete(`/reviews/${id}`)
   return resp.data

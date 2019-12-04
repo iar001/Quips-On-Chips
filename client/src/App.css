@@ -170,10 +170,34 @@ h1, h2, h3 {
   margin-top: 50%
 }
 
-.sc-review {
+.user-review-title {
+  text-align: center;
+}
+.sc-all-reviews {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   text-align: center;
   font-family: 'Maven Pro', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+
+}
+
+#sc-each-review {
+  border: aqua;
+  border-style: dashed;
+  border-radius: 5px;
+  color: green;
+}
+
+.textarea {
+
+    width: 25%;
+    height: 15vh;
+    padding: 10px;
+    /* margin: 10px; */
+    box-sizing: border-box;
+    resize: none;
+    border-radius: 6px;
+    opacity: 0.6;
+    cursor: unset;
 
 }

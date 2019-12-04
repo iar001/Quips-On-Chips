@@ -54,7 +54,7 @@ class CreateReview extends React.Component {
             value={parseInt(this.state.reviewForm).taste}
             onChange={this.handleFormChange}
             name="taste">
-            <option value="0.0">ZERO</option>
+            <option value="0.0">Enter Your Taste Score</option>
             <option value="0.1">0.1</option>
             <option value="0.2">0.2</option>
             <option value="0.3">0.3</option>
@@ -112,7 +112,7 @@ class CreateReview extends React.Component {
             value={parseInt(this.state.reviewForm).guilt}
             onChange={this.handleFormChange}
             name="guilt">
-            <option value="0.0">ZERO</option>
+            <option value="0.0">Enter Your Guilt Score</option>
             <option value="0.1">0.1</option>
             <option value="0.2">0.2</option>
             <option value="0.3">0.3</option>
@@ -169,7 +169,7 @@ class CreateReview extends React.Component {
             value={parseInt(this.state.reviewForm).cost}
             onChange={this.handleFormChange}
             name="cost">
-            <option value="0.0">ZERO</option>
+            <option value="0.0">Enter Your Cost Score</option>
             <option value="0.1">0.1</option>
             <option value="0.2">0.2</option>
             <option value="0.3">0.3</option>
@@ -223,7 +223,8 @@ class CreateReview extends React.Component {
           </select>
 
           <p>Review</p>
-          <input
+          <textarea
+            class="textarea"
             type="text"
             name="review"
             value={this.state.reviewForm.review}

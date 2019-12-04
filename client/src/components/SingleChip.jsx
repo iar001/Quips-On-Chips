@@ -69,12 +69,13 @@ export default class SingleChip extends React.Component {
 
           <div id="sc-ratings">
             <div>
-              <h1>Ratings</h1>
+              <h1>Survey Says</h1>
             </div>
             <div id="sc-categories">
               <h3>Taste: {this.state.tasteAverage} </h3>
-              <h3>Cost:{this.state.costAverage}</h3>
-              <h3>Guilt:{this.state.guiltAverage} </h3>
+              <h3>Cost: {this.state.costAverage}</h3>
+              <h3>Guilt: {this.state.guiltAverage} </h3>
+              <h4>What the Scores Mean</h4>
             </div>
           </div>
         </div>
@@ -95,29 +96,32 @@ export default class SingleChip extends React.Component {
         }
 
         <div className="sc-review">
-          {this.state.reviews.map(review => (
-            <React.Fragment key={review.id}>
-              <div>
-                <h1>Review</h1>
-                <p>Taste: {review.taste}</p>
-                <p>Guilt: {review.guilt}</p>
-                <p>Cost: {review.cost}</p>
-                <p>Review: {review.review}</p>
-
-                {
-                  this.props.currentUser && this.props.currentUser.id === review.user_id
-                    ?
-                    <>
-                      <Link to={`/chips/${this.props.chipId}/review/edit/${review.id}`}>
-                        <p>Click Here to Edit or Delete Your Review</p>
-                      </Link>
-                    </>
-                    :
-                    <p>This aint yours</p>
-                }
-              </div>
-            </React.Fragment>
-          ))}
+          <div className="user-review-title">
+            <h1>What Users Have to Say</h1>
+          </div>
+          <div className="sc-all-reviews">
+            {this.state.reviews.map(review => (
+              <React.Fragment key={review.id}>
+                <div id="sc-each-review">
+                  <p>Taste: {review.taste}</p>
+                  <p>Guilt: {review.guilt}</p>
+                  <p>Cost: {review.cost}</p>
+                  <p>Review: {review.review}</p>
+                  {
+                    this.props.currentUser && this.props.currentUser.id === review.user_id
+                      ?
+                      <>
+                        <Link to={`/chips/${this.props.chipId}/review/edit/${review.id}`}>
+                          <p>Click Here to Edit or Delete Your Review</p>
+                        </Link>
+                      </>
+                      :
+                      <p>This aint yours</p>
+                  }
+                </div>
+              </React.Fragment>
+            ))}
+          </div>
         </div>
       </div>
     )
