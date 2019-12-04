@@ -19,7 +19,8 @@ import {
   getAllChips,
   createReview,
   readAllReviews,
-  updateReview
+  updateReview,
+  chipsFlavorSort
 } from './services/api-helper'
 
 class App extends Component {
@@ -39,17 +40,20 @@ class App extends Component {
         guilt: null,
         review: ""
       },
-      chips: []
+      chips: [],
+      sortedChips: []
     }
   }
 
   async componentDidMount() {
     const chips = await getAllChips();
     const currentUser = await verifyUser();
+    const sortedChips = await chipsFlavorSort()
     if (currentUser) {
-      this.setState({ currentUser, chips })
+      this.setState({ currentUser, chips, sortedChips })
     }
   }
+
 
   //-------------- Reviews ------------------
   getReviews = async () => {
@@ -138,6 +142,7 @@ class App extends Component {
             </div>
             <ChipsList
               chips={this.state.chips}
+              sortedChips={this.state.sortedChips}
             />
           </React.Fragment>
         )}

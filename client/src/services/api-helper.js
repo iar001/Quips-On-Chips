@@ -41,6 +41,11 @@ export const oneSnack = async (id) => {
   return resp.data
 }
 
+export const chipsFlavorSort = async () => {
+  const resp = await api.get('/chips_by_flavor')
+  return resp.data
+}
+
 ////////REVIEWS///////
 
 export const createReview = async (id, formData) => {
