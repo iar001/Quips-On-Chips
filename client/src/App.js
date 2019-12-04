@@ -16,7 +16,8 @@ import {
   verifyUser,
   getAllChips,
   createReview,
-  readAllReviews
+  readAllReviews,
+  updateReview
 } from './services/api-helper'
 
 class App extends Component {
@@ -68,6 +69,26 @@ class App extends Component {
         review: ""
       }
     }))
+  }
+
+  editReview = async () => {
+    const { reviewForm } = this.state
+    await updateReview(reviewForm.id, reviewForm)
+    this.setState(prevState => (
+      {
+        reviews: prevState.reviews.map(review => {
+          return review.id === reviewForm.id ? reviewForm : review
+        })
+      }
+    ))
+  }
+
+  mountEditForm = async (id) => {
+    const reviews = await readAllReviews()
+    const review = reviews.find(element => element.id === parseInt(id));
+    this.setState({
+      reviewForm: review
+    })
   }
 
   handleFormChange = (e) => {
@@ -159,6 +180,22 @@ class App extends Component {
             />
 
           )} />
+        {/* <Route
+          path="/reviews/:id"
+          render={(props) => {
+            const { id } = props.match.params;
+            const review = this.state.reviews.find(ele => ele.id === parseInt(id));
+            return <ReviewPage
+              id={id}
+              review={review}
+              handleFormChange={this.handleFormChange}
+              mountEditForm={this.mountEditForm}
+              editReview={this.editReview}
+              commentForm={this.state.commentForm}
+            // deleteComment={this.deleteComment}
+            />
+          }}
+        /> */}
 
       </div>
     );

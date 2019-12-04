@@ -53,6 +53,12 @@ export const readAllReviews = async (id) => {
   return resp.data
 }
 
+export const updateReview = async (id, formData) => {
+  const resp = await api.put(`chips/${id}/reviews`, { review: formData })
+  return resp.data
+}
+
+
 // export const updateComment = async (id, data) => {
 //   const resp = await api.put(`/comments/${id}`, { comment: data })
 //   return resp.data

@@ -70,21 +70,3 @@ chips = Chip.create([
   }
 ])
 
-# users = User.create([
-#   {
-#     username: "ianrappaport",
-#     email: "joystick86@aol.com",
-#     password_digest: "hello123"
-#   }
-# ]),
-
-# reviews = Review.create([
-#   {
-#     cost: 4,
-#     guilt: 4,
-#     taste: 5,
-#     review: "Doritos are the best",
-#     user: users[0],
-#     chip: chips[0]
-#   }
-# ])

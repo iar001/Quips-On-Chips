@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import { Link, withRouter } from 'react-router-dom';
 import { oneSnack, readAllReviews } from '../services/api-helper'
-import { CreateReview } from './CreateReview'
+import { updateReview } from './CreateReview'
 
 
 export default class SingleChip extends React.Component {
@@ -27,11 +27,16 @@ export default class SingleChip extends React.Component {
     })
   }
 
+  // editReview = async () => {
+  //   const { reviewForm } = this.state
+  //   await updateReview(reviewForm.id,)
+  // }
+
   reviewAverage(reviews) {
     if (reviews.length === 0) {
       this.setState({
         guiltAverage: " No Reviews",
-        costAverage:  " No Reviews",
+        costAverage: " No Reviews",
         tasteAverage: " No Reviews"
       })
     } else {
@@ -106,6 +111,16 @@ export default class SingleChip extends React.Component {
                 <p>Guilt: {review.guilt}</p>
                 <p>Cost: {review.cost}</p>
                 <p>Review: {review.review}</p>
+                <p>UserId: {review.user_id}</p>
+                {
+                  this.props.currentUser.id === review.user_id
+                    ?
+                    <>
+                      <p>{review.user_id}</p>
+                    </>
+                    :
+                    <p>This aint yours</p>
+                }
               </div>
             </React.Fragment>
           ))}

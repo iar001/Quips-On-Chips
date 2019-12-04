@@ -33,6 +33,12 @@ class ReviewsController < ApplicationController
     render json: @reviews, include: :chip, status: :ok
   end
 
+  def index_by_chip_and_user
+    @chip = Chip.find(params[:chip_id])
+    @user = User.find(params[:user_id])
+    render json: @reviews, include: :chip, status: :ok
+  end
+
   # PATCH/PUT /reviews/1
   def update
     if @review.user == @current_user
