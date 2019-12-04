@@ -17,21 +17,14 @@ export default class SingleChip extends React.Component {
       tasteAverage: null,
     }
   }
+
   async componentDidMount() {
     const chipId = parseInt(this.props.chipId)
     const chip = await oneSnack(chipId)
     const reviews = await readAllReviews(chipId)
     this.reviewAverage(reviews)
-    this.setState({
-      chip,
-      reviews
-    })
+    this.setState({ chip, reviews })
   }
-
-  // editReview = async () => {
-  //   const { reviewForm } = this.state
-  //   await updateReview(reviewForm.id,)
-  // }
 
   reviewAverage(reviews) {
     if (reviews.length === 0) {
@@ -52,9 +45,7 @@ export default class SingleChip extends React.Component {
       const guiltAverage = (guiltTotal / reviews.length).toFixed(2)
       const costAverage = (costTotal / reviews.length).toFixed(2)
       const tasteAverage = (tasteTotal / reviews.length).toFixed(2)
-      this.setState({
-        guiltAverage, costAverage, tasteAverage
-      })
+      this.setState({ guiltAverage, costAverage, tasteAverage })
     }
   }
 
@@ -100,7 +91,7 @@ export default class SingleChip extends React.Component {
               </div>
             </>
             :
-            <p>Nothin</p>
+            <p>Sign in and the ability to review will magically appear here</p>
         }
 
         <div className="sc-review">
@@ -112,14 +103,13 @@ export default class SingleChip extends React.Component {
                 <p>Guilt: {review.guilt}</p>
                 <p>Cost: {review.cost}</p>
                 <p>Review: {review.review}</p>
-                <p>UserId: {review.user_id}</p>
-                <p>ReviewId: {review.id}</p>
+
                 {
-                  this.props.currentUser.id === review.user_id
+                  this.props.currentUser && this.props.currentUser.id === review.user_id
                     ?
                     <>
                       <Link to={`/chips/${this.props.chipId}/review/edit/${review.id}`}>
-                        <h3>Click Here to Edit Your Review</h3>
+                        <p>Click Here to Edit or Delete Your Review</p>
                       </Link>
                     </>
                     :

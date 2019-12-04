@@ -64,12 +64,8 @@ export const updateReview = async (id, formData) => {
 }
 
 
-// export const updateComment = async (id, data) => {
-//   const resp = await api.put(`/comments/${id}`, { comment: data })
-//   return resp.data
-// }
 
-// export const destroyComment = async (id) => {
-//   const resp = await api.delete(`/comments/${id}`)
-//   return resp.data
-// }
+export const destroyReview = async (id) => {
+  const resp = await api.delete(`/reviews/${id}`)
+  return resp.data
+}
