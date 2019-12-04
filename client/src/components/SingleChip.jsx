@@ -10,17 +10,46 @@ export default class SingleChip extends React.Component {
     super(props);
     this.state = {
       chip: [],
-      reviews: []
+      reviews: [],
+      guiltAverage: null,
+      costAverage: null,
+      tasteAverage: null
     }
   }
   async componentDidMount() {
     const chipId = parseInt(this.props.chipId)
     const chip = await oneSnack(chipId)
     const reviews = await readAllReviews(chipId)
+    this.reviewAverage(reviews)
     this.setState({
       chip,
       reviews
     })
+  }
+
+  reviewAverage(reviews) {
+    if (reviews.length === 0) {
+      this.setState({
+        guiltAverage: " No Reviews",
+        costAverage:  " No Reviews",
+        tasteAverage: " No Reviews"
+      })
+    } else {
+      let guiltTotal = 0
+      let costTotal = 0
+      let tasteTotal = 0
+      reviews.forEach(review => {
+        guiltTotal += review.guilt
+        costTotal += review.cost
+        tasteTotal += review.taste
+      })
+      const guiltAverage = (guiltTotal / reviews.length).toFixed(2)
+      const costAverage = (costTotal / reviews.length).toFixed(2)
+      const tasteAverage = (tasteTotal / reviews.length).toFixed(2)
+      this.setState({
+        guiltAverage, costAverage, tasteAverage
+      })
+    }
   }
 
   render() {
@@ -46,9 +75,9 @@ export default class SingleChip extends React.Component {
               <h1>Ratings</h1>
             </div>
             <div id="sc-categories">
-              <h3>Taste: </h3>
-              <h3>Cost:</h3>
-              <h3>Guilt: </h3>
+              <h3>Taste: {this.state.tasteAverage} </h3>
+              <h3>Cost:{this.state.costAverage}</h3>
+              <h3>Guilt:{this.state.guiltAverage} </h3>
             </div>
           </div>
         </div>
