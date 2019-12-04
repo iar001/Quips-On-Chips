@@ -1,6 +1,6 @@
 class ChipsController < ApplicationController
   before_action :set_chip, only: [:show, :update, :destroy]
-  before_action :authorize_request, except: %i[index show]
+  before_action :authorize_request, except: %i[index show chips_by_flavor]
 
 
   # GET /chips
@@ -13,6 +13,17 @@ class ChipsController < ApplicationController
   # GET /chips/1
   def show
     render json: @chip
+  end
+
+  def chips_by_flavor
+    @chips = Chip.all
+    @chips = @chips.map do |chip|
+      {
+        **chip.attributes.symbolize_keys,
+        average: chip.score_average
+      }
+    end
+    render json: @chips.sort_by { |chip| -chip[:average] } 
   end
 
   # POST /chips
