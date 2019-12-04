@@ -7,6 +7,7 @@ import Header from './components/Header'
 import ChipsList from './components/ChipsList'
 import SingleChip from './components/SingleChip';
 import CreateReview from './components/CreateReview';
+import EditReview from './components/EditReview'
 
 import { Route, Link, withRouter } from 'react-router-dom';
 
@@ -109,7 +110,10 @@ class App extends Component {
 
   handleLogin = async () => {
     const currentUser = await loginUser(this.state.authFormData);
-    this.setState({ currentUser });
+    this.setState({
+      currentUser
+    })
+    this.props.history.push(`/`)
   }
 
   handleRegister = async (e) => {
@@ -153,6 +157,7 @@ class App extends Component {
           <SingleChip
             chipId={props.match.params.chipId}
             currentUser={this.state.currentUser}
+            mountEditForm={this.mountEditForm}
           />}
         />
         <Route exact path="/login" render={() => (
@@ -171,7 +176,7 @@ class App extends Component {
         />
 
         <Route
-          path="/chips/:chipId/review" render={(props) => (
+          exact path="/chips/:chipId/review" render={(props) => (
             <CreateReview
               // handleFormChange={this.handleFormChange}
               // reviewForm={this.state.reviewForm}
@@ -180,6 +185,20 @@ class App extends Component {
             />
 
           )} />
+        
+        <Route
+          exact path="/chips/:chipId/review/edit/:reviewId" render={(props) => (
+            <EditReview
+              // handleFormChange={this.handleFormChange}
+              // reviewForm={this.state.reviewForm}
+              // mountEditForm={this.mountEditForm}
+              // newReview={this.newReview}
+              chipId={props.match.params.chipId}
+            />
+
+          )} />
+        
+
         {/* <Route
           path="/reviews/:id"
           render={(props) => {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 
 // This component handles our login form and has a link to the register form
@@ -24,4 +24,4 @@ const Login = (props) => {
   );
 }
 
-export default Login;
+export default withRouter(Login);

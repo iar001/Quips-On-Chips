@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Link, withRouter } from 'react-router-dom';
 import { oneSnack, readAllReviews } from '../services/api-helper'
 import { updateReview } from './CreateReview'
+import EditReview from './EditReview';
 
 
 export default class SingleChip extends React.Component {
@@ -13,7 +14,7 @@ export default class SingleChip extends React.Component {
       reviews: [],
       guiltAverage: null,
       costAverage: null,
-      tasteAverage: null
+      tasteAverage: null,
     }
   }
   async componentDidMount() {
@@ -112,11 +113,14 @@ export default class SingleChip extends React.Component {
                 <p>Cost: {review.cost}</p>
                 <p>Review: {review.review}</p>
                 <p>UserId: {review.user_id}</p>
+                <p>ReviewId: {review.id}</p>
                 {
                   this.props.currentUser.id === review.user_id
                     ?
                     <>
-                      <p>{review.user_id}</p>
+                      <Link to={`/chips/${this.props.chipId}/review/edit/${review.id}`}>
+                        <h3>Click Here to Edit Your Review</h3>
+                      </Link>
                     </>
                     :
                     <p>This aint yours</p>

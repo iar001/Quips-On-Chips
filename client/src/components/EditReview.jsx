@@ -1,6 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import { updateReview } from '../services/api-helper';
+import { updateReview, createReview, oneReview } from '../services/api-helper';
+
 
 class EditReview extends React.Component {
   constructor(props) {
@@ -17,10 +18,13 @@ class EditReview extends React.Component {
     }
   }
 
-  newReview = async (e) => {
-    e.preventDefault();
+
+ 
+
+  updatedReview = async () => {
     const reviewForm = this.state.reviewForm
-    const review = await createReview(this.props.chipId, reviewForm);
+    const review = await updateReview(this.props.match.params.reviewId, reviewForm)
+    console.log(review)
     this.setState(prevState => ({
       reviews: [...prevState.reviews, review],
       reviewForm: {
@@ -30,20 +34,7 @@ class EditReview extends React.Component {
         review: ""
       }
     }))
-    this.props.history.push(`/chips/${this.props.chipId}`)
-  }
-
-  editReview = async () => {
-    const { reviewForm } = this.state
-    await updateReview(reviewForm.id, reeviwForm)
-    this.setState(prevState => (
-      {
-        reviews: prevState.reviews.map(review => {
-          return review.id === reviewForm.id ? reviewForm : review
-        })
-      }
-    ))
-    this.props.history.push(`/chips/${this.props.chipId}`)
+    this.props.history.push(`/chips/${this.props.match.params.chipId}`)
   }
 
   handleFormChange = (e) => {
@@ -61,7 +52,7 @@ class EditReview extends React.Component {
 
       <div className="create-form" >
         <h2>Write a New Review</h2>
-        <form onSubmit={this.editReview}>
+        <form onSubmit={this.updatedReview}>
           <p>Taste Score:</p>
           <select
             value={parseInt(this.state.reviewForm).taste}

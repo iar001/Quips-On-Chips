@@ -48,13 +48,18 @@ export const createReview = async (id, formData) => {
   return resp.data
 }
 
+export const oneReview = async(id) => {
+  const resp = await api.get(`/reviews/${id}`)
+  return resp.data
+}
+
 export const readAllReviews = async (id) => {
   const resp = await api.get(`chips/${id}/reviews`)
   return resp.data
 }
 
 export const updateReview = async (id, formData) => {
-  const resp = await api.put(`chips/${id}/reviews`, { review: formData })
+  const resp = await api.put(`/reviews/${id}`, { review: formData })
   return resp.data
 }
 
