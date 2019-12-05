@@ -232,6 +232,19 @@ h1, h2, h3 {
   margin: 0px;
 }
 
+#delete-button-form {
+  display: flex;
+  /* margin-left: 50px; */
+  justify-content: space-evenly;
+
+}
+#delete-button-form img {
+  height: 50px;
+  width: 150px;
+}
+
+
+
 /* Button  */
 button {
   background: greenyellow;

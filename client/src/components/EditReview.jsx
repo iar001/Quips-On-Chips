@@ -71,9 +71,7 @@ class EditReview extends React.Component {
       <div className="form">
 
         <div className="create-form" >
-          <button
-            onClick={this.deleteReview}
-          >Delete Your Quip</button>
+
           <h2>Edit Your Score and Quip for {this.state.chip.name}</h2>
           <form onSubmit={this.updatedReview}>
             <p>Taste Score:</p>
@@ -260,10 +258,19 @@ class EditReview extends React.Component {
             <div>
               <button>Submit</button>
             </div>
+            
+
           </form>
         </div >
         <div className="bag-pic-review">
-          <img src={this.state.chip.bag_pic_url}/>
+          <img src={this.state.chip.bag_pic_url} />
+          <div id="delete-button-form">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Skull_and_Crossbones.svg/440px-Skull_and_Crossbones.svg.png" />
+              <button
+                onClick={this.deleteReview}
+              >Delete Your Quip</button>
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Skull_and_Crossbones.svg/440px-Skull_and_Crossbones.svg.png" />
+            </div>
         </div>
       </div>
     )
