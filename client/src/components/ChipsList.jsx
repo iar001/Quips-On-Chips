@@ -53,7 +53,31 @@ class ChipsList extends React.Component {
         }
         { this.state.sorted === "taste" &&
           <div className="chips-list-div">
-            {this.props.sortedChips.map(chip => (
+            {this.props.sortedFlavorChips.map(chip => (
+              <React.Fragment key={chip.id}>
+                <Link to={`/chips/${chip.id}`}>
+                  <img className="chip-img" src={chip.bag_pic_url} />
+                  <h3>{chip.name}</h3>
+                </Link>
+              </React.Fragment>
+            ))}
+          </div>
+        }
+        { this.state.sorted === "cost" &&
+          <div className="chips-list-div">
+            {this.props.sortedCostChips.map(chip => (
+              <React.Fragment key={chip.id}>
+                <Link to={`/chips/${chip.id}`}>
+                  <img className="chip-img" src={chip.bag_pic_url} />
+                  <h3>{chip.name}</h3>
+                </Link>
+              </React.Fragment>
+            ))}
+          </div>
+        }
+        { this.state.sorted === "guilt" &&
+          <div className="chips-list-div">
+            {this.props.sortedGuiltChips.map(chip => (
               <React.Fragment key={chip.id}>
                 <Link to={`/chips/${chip.id}`}>
                   <img className="chip-img" src={chip.bag_pic_url} />

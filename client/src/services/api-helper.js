@@ -46,6 +46,15 @@ export const chipsFlavorSort = async () => {
   return resp.data
 }
 
+export const chipsCostSort = async () => {
+  const resp = await api.get('/chips_by_cost')
+  return resp.data
+}
+
+export const chipsGuiltSort = async () => {
+  const resp = await api.get('/chips_by_guilt')
+  return resp.data
+}
 ////////REVIEWS///////
 
 export const createReview = async (id, formData) => {
