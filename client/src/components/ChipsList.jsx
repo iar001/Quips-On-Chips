@@ -23,6 +23,7 @@ class ChipsList extends React.Component {
       <div id="chips-div">
         
         <select
+          id="chips-sort-select"
           value={this.state.sorted}
           onChange={this.handleChange}
           name="sorted">

@@ -95,7 +95,6 @@ a:visited  {
   padding-bottom: 2vh;
 }
 
-
 .chips-list-div {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -290,6 +289,7 @@ button {
     background: -moz-linear-gradient(top left, #50a3a2 0%, #53e3a6 100%);
     background: -o-linear-gradient(top left, #50a3a2 0%, #53e3a6 100%);
     background: linear-gradient(to bottom right, #50a3a2 0%, #53e3a6 100%);
+    height: 90vh;
   }
 
   .bag-pic-review {

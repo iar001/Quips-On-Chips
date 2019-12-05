@@ -33,7 +33,7 @@ const Login = (props) => {
             onChange={props.handleChange} />
           <hr />
           <button>Login</button>
-          <Link to="/register">Register</Link>
+          <Link to="/register"><button>Register</button></Link>
         </form>
       </div>
       <ul class="bg-bubbles">
