@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Login from './components/Login';
 import Register from './components/Register';
@@ -8,10 +7,7 @@ import ChipsList from './components/ChipsList'
 import SingleChip from './components/SingleChip';
 import CreateReview from './components/CreateReview';
 import EditReview from './components/EditReview';
-// import ChipsHeroPic from './components/ChipsHeroPic';
-
 import { Route, Link, withRouter } from 'react-router-dom';
-
 import {
   loginUser,
   registerUser,
@@ -59,7 +55,6 @@ class App extends Component {
       this.setState({ currentUser, chips, sortedFlavorChips, sortedCostChips, sortedGuiltChips })
     }
   }
-
 
   //-------------- Reviews ------------------
   getReviews = async () => {
@@ -133,9 +128,6 @@ class App extends Component {
           handleLogout={this.handleLogout}
           currentUser={this.state.currentUser}
         />
-        {/* <Route exact path="/" render={() => (
-          <ChipsHeroPic />
-        )} /> */}
 
         <Route exact path="/" render={() => (
           <React.Fragment>
@@ -153,14 +145,14 @@ class App extends Component {
               sortedGuiltChips={this.state.sortedGuiltChips}
             />
           </React.Fragment>
-        )} />
+        )}
+        />
 
         <Route exact path="/chips/:chipId" render={(props) =>
           <SingleChip
             chipId={props.match.params.chipId}
             currentUser={this.state.currentUser}
-            mountEditForm={this.mountEditForm}
-          />}
+            mountEditForm={this.mountEditForm} />}
         />
 
         <Route exact path="/login" render={() => (
@@ -182,7 +174,6 @@ class App extends Component {
           exact path="/chips/:chipId/review" render={(props) => (
             <CreateReview
               chipId={props.match.params.chipId}
-
             />
           )} />
 
@@ -195,7 +186,6 @@ class App extends Component {
       </div>
     );
   }
-
 }
 
 export default withRouter(App);

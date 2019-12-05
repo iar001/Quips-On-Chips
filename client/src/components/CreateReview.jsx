@@ -55,7 +55,7 @@ class CreateReview extends React.Component {
 
 
         <div className="create-form" >
-          <h2>Enter Your Scores and Quip for {this.state.chip.name} </h2>
+          <h2>Enter Your Scores and Quip About {this.state.chip.name} </h2>
           <form onSubmit={this.newReview}>
             <p>Taste Score:</p>
             <select

@@ -21,8 +21,6 @@ export default function Header(props) {
                   onClick={props.handleLogout}>Logout</button>
               </div>
             </div>
-
-
           </>
           :
           <button

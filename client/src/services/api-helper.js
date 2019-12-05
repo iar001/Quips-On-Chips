@@ -42,7 +42,7 @@ export const oneSnack = async (id) => {
 }
 
 export const chipsFlavorSort = async () => {
-  const resp = await api.get('/chips_by_flavor')
+  const resp = await api.get('/chips_by_taste')
   return resp.data
 }
 

@@ -30,7 +30,6 @@ class EditReview extends React.Component {
       },
       chip
     })
-
   }
 
   updatedReview = async (e) => {
@@ -70,7 +69,6 @@ class EditReview extends React.Component {
   render() {
     return (
       <div className="form">
-
 
         <div className="create-form" >
           <button
