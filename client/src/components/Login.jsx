@@ -6,20 +6,49 @@ import { Link, withRouter } from 'react-router-dom';
 const Login = (props) => {
 
   return (
-    <div className="auth-container">
-      <h2>login</h2>
-      <hr />
-      <form onSubmit={(e) => {
-        e.preventDefault();
-        props.handleLogin();}} >
-        <p>Username:</p>
-        <input name="username" type="text" value={props.formData.username} onChange={props.handleChange} />
-        <p>Password:</p>
-        <input name="password" type="password" value={props.formData.password} onChange={props.handleChange} />
-        <hr/>
-        <button>Login</button>
-        <Link to="/register">Register</Link>
-      </form>
+    <div className="wrapper">
+
+
+      <div className="auth-container">
+        <h1>Login</h1>
+        <hr />
+        <form
+          // className="form"
+          onSubmit={(e) => {
+          e.preventDefault();
+          props.handleLogin();
+        }} >
+          <p>Username:</p>
+          <input
+            name="username"
+            type="text"
+            value={props.formData.username}
+            placeholder="username"
+            onChange={props.handleChange} />
+          <p>Password:</p>
+          <input
+            name="password"
+            type="password"
+            value={props.formData.password}
+            placeholder="password"
+            onChange={props.handleChange} />
+          <hr />
+          <button>Login</button>
+          <Link to="/register">Register</Link>
+        </form>
+      </div>
+      <ul class="bg-bubbles">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
     </div>
   );
 }

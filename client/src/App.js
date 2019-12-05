@@ -56,7 +56,7 @@ class App extends Component {
     const sortedCostChips = await chipsCostSort()
     const sortedGuiltChips = await chipsGuiltSort()
     if (currentUser) {
-      this.setState({ currentUser, chips, sortedFlavorChips,sortedCostChips,sortedGuiltChips})
+      this.setState({ currentUser, chips, sortedFlavorChips, sortedCostChips, sortedGuiltChips })
     }
   }
 
@@ -105,6 +105,7 @@ class App extends Component {
     e.preventDefault();
     const currentUser = await registerUser(this.state.authFormData);
     this.setState({ currentUser });
+    this.props.history.push(`/`)
   }
 
   handleLogout = () => {
@@ -152,8 +153,8 @@ class App extends Component {
               sortedGuiltChips={this.state.sortedGuiltChips}
             />
           </React.Fragment>
-        )}/>
-        
+        )} />
+
         <Route exact path="/chips/:chipId" render={(props) =>
           <SingleChip
             chipId={props.match.params.chipId}
@@ -181,6 +182,7 @@ class App extends Component {
           exact path="/chips/:chipId/review" render={(props) => (
             <CreateReview
               chipId={props.match.params.chipId}
+
             />
           )} />
 

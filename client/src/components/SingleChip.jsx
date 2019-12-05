@@ -54,7 +54,6 @@ export default class SingleChip extends React.Component {
       <div>
         <div className="sc">
           <div id="sc-image-dummy">
-            {/* <h1>{this.state.chip.name}</h1> */}
             <div id="sc-image">
               <div id="sc-image-inner">
                 <div id="sc-image-front">
@@ -76,6 +75,21 @@ export default class SingleChip extends React.Component {
               <h3>Cost: {this.state.costAverage}</h3>
               <h3>Guilt: {this.state.guiltAverage} </h3>
               <h4>What the Scores Mean</h4>
+              {
+          this.props.currentUser
+            ?
+            <>
+              <div id="review">
+                <React.Fragment key={this.props.chipId}>
+                  <Link to={`/chips/${this.props.chipId}/review`}>
+                    <h3>Click here to Quip about {this.state.chip.name}</h3>
+                  </Link>
+                </React.Fragment>
+              </div>
+            </>
+            :
+            <p>Sign in and the ability to Quip will magically appear here</p>
+        }
             </div>
           </div>
         </div>
@@ -86,18 +100,18 @@ export default class SingleChip extends React.Component {
               <div id="review">
                 <React.Fragment key={this.props.chipId}>
                   <Link to={`/chips/${this.props.chipId}/review`}>
-                    <h3>Click Here to Write a Review Of {this.state.chip.name}</h3>
+                    <h3>Click here to Quip about {this.state.chip.name}</h3>
                   </Link>
                 </React.Fragment>
               </div>
             </>
             :
-            <p>Sign in and the ability to review will magically appear here</p>
+            <p>Sign in and the ability to Quip will magically appear here</p>
         }
 
         <div className="sc-review">
           <div className="user-review-title">
-            <h1>What Users Have to Say</h1>
+            <h1>Quips on This Chip</h1>
           </div>
           <div className="sc-all-reviews">
             {this.state.reviews.map(review => (
@@ -106,7 +120,7 @@ export default class SingleChip extends React.Component {
                   <p>Taste: {review.taste}</p>
                   <p>Guilt: {review.guilt}</p>
                   <p>Cost: {review.cost}</p>
-                  <p>Review: {review.review}</p>
+                  <p>Quip: {review.review}</p>
                   {
                     this.props.currentUser && this.props.currentUser.id === review.user_id
                       ?
@@ -116,7 +130,7 @@ export default class SingleChip extends React.Component {
                         </Link>
                       </>
                       :
-                      <p>This aint yours</p>
+                      <p></p>
                   }
                 </div>
               </React.Fragment>
