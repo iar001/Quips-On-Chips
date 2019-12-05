@@ -230,7 +230,9 @@ class CreateReview extends React.Component {
             value={this.state.reviewForm.review}
             onChange={this.handleFormChange}
           />
-          <button>Submit</button>
+          <div>
+            <button>Submit</button>
+          </div>
         </form>
       </div >
     )

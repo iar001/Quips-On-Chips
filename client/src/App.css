@@ -38,19 +38,59 @@ a:visited  {
   width: 100vw;
 }
 
-#cover-img-h2 {
-  color: black;
+/* #cover-img-h1 {
+  color: white;
   position: absolute;
-  top: 77%;
-  left: 45%;
+  top: 50%;
+  left: 40%;
+  text-shadow:
+  0.05em 0 black,
+  0 0.05em black,
+  -0.05em 0 black,
+  0 -0.05em black,
+  -0.05em -0.05em black,
+  -0.05em 0.05em black,
+  0.05em -0.05em black,
+  0.05em 0.05em black;
+  font-size: 30px;
+  border: 5px solid green;
+
+} */
+
+#cover-img-h1 {
+  top: 3%;
+  left: 25%;
+  position: absolute;
+  color: red;
+  font-family: monospace; /* Web-safe typewriter-like font */
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid orange; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .10em; /* Adjust as needed */
+  animation: 
+    typing 3.5s steps(30, end),
+    blinking-cursor .5s step-end infinite;
+    animation-iteration-count: 3;
+    
+}
+@keyframes typing {
+  from { width: 0 }
+  to { width: 37% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blinking-cursor {
+  from, to { border-color: transparent }
+  50% { border-color: black; }
 }
 
 #arrow-down {
   color: white;
   font-size: 4em;
   position: absolute;
-  top: 85%;
-  left: 48%;
+  top: 0%;
+  left: 60%;
 }
 
 .animated {
@@ -135,6 +175,8 @@ h1, h2, h3 {
 .sc {
   display: flex;
   justify-content: space-evenly;
+  background-color: red;
+
 }
 
 
@@ -183,10 +225,11 @@ h1, h2, h3 {
 
 #sc-ratings {
   margin-left: 10%;
+  background-color: red;
+
 }
 
 #sc-categories {
-  /* margin-top: 50% */
 }
 
 .user-review-title {

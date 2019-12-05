@@ -141,7 +141,7 @@ class App extends Component {
             <div className="cover-img-div">
               <img id="cover-img" src="https://previews.123rf.com/images/niloo138/niloo1381503/niloo138150300006/38140413-potato-chips-and-snacks-on-shelves-in-a-supermarket.jpg" />
               <a href="#chips-div">
-                <h2 id="cover-img-h2">Find Chips to Quip</h2>
+                <h1 id="cover-img-h1">Click to Find Chips to Quip</h1>
                 <i id="arrow-down" class="material-icons animated bounce">play_for_work</i>
               </a>
             </div>
