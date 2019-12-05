@@ -140,11 +140,10 @@ class App extends Component {
           <React.Fragment>
             <div className="cover-img-div">
               <img id="cover-img" src="https://previews.123rf.com/images/niloo138/niloo1381503/niloo138150300006/38140413-potato-chips-and-snacks-on-shelves-in-a-supermarket.jpg" />
-              <a href="chips-list-div">
+              <a href="#chips-div">
                 <h2 id="cover-img-h2">Find Chips to Quip</h2>
                 <i id="arrow-down" class="material-icons animated bounce">play_for_work</i>
               </a>
-
             </div>
             <ChipsList
               chips={this.state.chips}
@@ -153,9 +152,8 @@ class App extends Component {
               sortedGuiltChips={this.state.sortedGuiltChips}
             />
           </React.Fragment>
-        )}
-        />
-
+        )}/>
+        
         <Route exact path="/chips/:chipId" render={(props) =>
           <SingleChip
             chipId={props.match.params.chipId}

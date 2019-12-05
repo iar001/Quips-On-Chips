@@ -7,7 +7,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+html {
+  scroll-behavior: smooth;
+}
 /* HEADER */
+
 
 .header {
   background-color: antiquewhite;
@@ -15,8 +19,19 @@ body {
   justify-content: space-between; 
 }
 
+header h1 {
+  margin-left: 10px;
+}
+
 
 /* ChipList Styling */
+a {
+  color: inherit;
+}
+
+a:visited  {
+  color: inherit;
+}
 #cover-img {
   text-align: center;
   height: 100vh;
@@ -48,6 +63,10 @@ body {
   margin-top: 1vh;
   margin-left: 1vh;
   font-size: 2.5em;
+}
+
+.bounce {
+  animation-name: bounce;
 }
 
 #chips-div-heading {
@@ -167,7 +186,7 @@ h1, h2, h3 {
 }
 
 #sc-categories {
-  margin-top: 50%
+  /* margin-top: 50% */
 }
 
 .user-review-title {
@@ -231,5 +250,20 @@ button {
 
   #login-shape {
     display: flex
+  }
+
+  #logout-button {
+    height: 50px;
+    width: 75px;
+    line-height: 50px;
+    background: forestgreen
+  }
+
+  #logout-button:hover{
+    color: forestgreen;
+    background-color: black;
+    transition-timing-function: ease-in-out;
+    transition: .5s;
+    border: 3px solid forestgreen;
   }
   

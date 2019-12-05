@@ -54,7 +54,7 @@ export default class SingleChip extends React.Component {
       <div>
         <div className="sc">
           <div id="sc-image-dummy">
-            <h1>{this.state.chip.name}</h1>
+            {/* <h1>{this.state.chip.name}</h1> */}
             <div id="sc-image">
               <div id="sc-image-inner">
                 <div id="sc-image-front">
@@ -69,7 +69,7 @@ export default class SingleChip extends React.Component {
 
           <div id="sc-ratings">
             <div>
-              <h1>Survey Says</h1>
+              <h1>{this.state.chip.name}</h1>
             </div>
             <div id="sc-categories">
               <h3>Taste: {this.state.tasteAverage} </h3>
