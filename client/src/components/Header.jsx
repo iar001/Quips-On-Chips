@@ -11,11 +11,23 @@ export default function Header(props) {
         {props.currentUser
           ?
           <>
-            <p>UserName: {props.currentUser.username}</p>
-            <button onClick={props.handleLogout}>Logout</button>
+            <div id="login-shape">
+              <div>
+                <p>Hello, {props.currentUser.username}</p>
+              </div>
+              <div>
+                <button
+                  id="login-button"
+                  onClick={props.handleLogout}>Logout</button>
+              </div>
+            </div>
+
+
           </>
           :
-          <button onClick={props.handleLoginButton}>Login or Register</button>
+          <button
+            id="login-button"
+            onClick={props.handleLoginButton}>Login or Register</button>
         }
       </div>
     </header>

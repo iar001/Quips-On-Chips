@@ -208,12 +208,12 @@ button {
   background: greenyellow;
   color: black;
   font-family: Sans-serif;
-  font-size: 25px;
-  height: 60px;
+  font-size: 15px;
+  height: 50px;
   width: 150px;
-  line-height: 60px;
+  line-height: 50px;
   /* line-height changes where text is in buttom */
-  margin: 20px 20px;
+  margin: 5px 5px;
   /* margin moves where the button is on screen */
   text-align: center;
   border: 3px solid black;
@@ -228,3 +228,8 @@ button {
     transition: .5s;
     border: 3px solid greenyellow;
   }
+
+  #login-shape {
+    display: flex
+  }
+  
