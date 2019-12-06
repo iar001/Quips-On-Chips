@@ -67,6 +67,7 @@ export default class SingleChip extends React.Component {
     }))
   }
 
+
   render() {
     return (
       <div>
@@ -135,10 +136,13 @@ export default class SingleChip extends React.Component {
             {this.state.reviews.map(review => (
               <React.Fragment key={review.id}>
                 <div id="sc-each-review">
-                  <p>Taste:{review.taste }</p>
-                  <p>Guilt: {review.guilt}</p>
-                  <p>Cost: {review.cost}</p>
+                  <div id="user-scores">
+                    <p>Taste:{review.taste}</p>
+                    <p>Guilt: {review.guilt}</p>
+                    <p>Cost: {review.cost}</p>
+                  </div>
                   <p>Quip: {review.review}</p>
+                 
                   {
                     this.props.currentUser && this.props.currentUser.id === review.user_id
                       ?

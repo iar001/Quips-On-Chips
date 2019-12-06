@@ -231,7 +231,12 @@ h1, h2, h3 {
 }
 
 #sc-each-review p {
-  margin: 0px;
+  margin: 0px;  
+}
+
+#user-scores {
+  display: flex;
+  justify-content: space-evenly;
 }
 
 #delete-button-form {
