@@ -15,6 +15,7 @@ export default class SingleChip extends React.Component {
       guiltAverage: null,
       costAverage: null,
       tasteAverage: null,
+      categories: ""
     }
   }
 
@@ -49,6 +50,14 @@ export default class SingleChip extends React.Component {
     }
   }
 
+  handleChange = (e) => {
+    const { name, value } = e.target;
+    this.setState(prevState => ({
+      ...prevState,
+      [name]: value
+    }))
+  }
+
   render() {
     return (
       <div>
@@ -74,29 +83,42 @@ export default class SingleChip extends React.Component {
               <h3>Taste: {this.state.tasteAverage} </h3>
               <h3>Cost: {this.state.costAverage}</h3>
               <h3>Guilt: {this.state.guiltAverage} </h3>
-              <h4>What the Scores Mean</h4>
-              <p>Taste: Higher the score, better the flavor</p>
-              <p>Cost: Higher the score, more expensive the item</p>
-              <p>Guilt: Higher the score, bigger the regret</p>
+              <select
+                id="sc-categories-select"
+                value={this.state.categories}
+                onChange={this.handleChange}
+                name="categories"
+              >
+                <option value="">What Do Catgories Mean</option>
+                <option value="show">Show me</option>
+              </select>
               {
-          this.props.currentUser
-            ?
-            <>
-              <div id="review">
-                <React.Fragment key={this.props.chipId}>
-                  <Link to={`/chips/${this.props.chipId}/review`}>
-                    <h3>Click here to Quip about {this.state.chip.name}</h3>
-                  </Link>
-                </React.Fragment>
-              </div>
-            </>
-            :
-            <p>Sign in and the ability to Quip will magically appear here</p>
-        }
+                this.state.categories === "show" &&
+                <div>
+                  <p>Taste: Higher the score, better the flavor</p>
+                  <p>Cost: Higher the score, more expensive the item</p>
+                  <p>Guilt: Higher the score, bigger the regret</p>
+                </div>
+              }
+              {
+                this.props.currentUser
+                  ?
+                  <>
+                    <div id="review">
+                      <React.Fragment key={this.props.chipId}>
+                        <Link to={`/chips/${this.props.chipId}/review`}>
+                          <h3>Click here to Quip about {this.state.chip.name}</h3>
+                        </Link>
+                      </React.Fragment>
+                    </div>
+                  </>
+                  :
+                  <p>Sign in and the ability to Quip will magically appear here</p>
+              }
             </div>
           </div>
         </div>
-     
+
         <div className="sc-review">
           <div className="user-review-title">
             <h1>Quips on This Chip</h1>

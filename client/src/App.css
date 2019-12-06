@@ -153,9 +153,11 @@ h1, h2, h3 {
   display: flex;
   justify-content: space-evenly;
   background-color: rgb(42, 95, 70);
-
 }
 
+#sc-categories-select {
+  width: 50%
+}
 
 /* Image Flip on Single Cip Page  */
 #sc-image {
