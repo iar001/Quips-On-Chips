@@ -26,6 +26,8 @@ class EditReview extends React.Component {
     this.setState({
       reviewForm: {
         cost: mountReview.cost,
+        taste: mountReview.taste,
+        guilt: mountReview.guilt,
         review: mountReview.review
       },
       chip
@@ -79,7 +81,7 @@ class EditReview extends React.Component {
               value={parseInt(this.state.reviewForm).taste}
               onChange={this.handleFormChange}
               name="taste">
-              <option value="0.0">Edit Your Taste Score</option>
+              <option value="0.0">{this.state.reviewForm.taste}</option>
               <option value="0.1">0.1</option>
               <option value="0.2">0.2</option>
               <option value="0.3">0.3</option>
@@ -89,7 +91,7 @@ class EditReview extends React.Component {
               <option value="0.7">0.7</option>
               <option value="0.8">0.8</option>
               <option value="0.9">0.9</option>
-              <option value="1">1.0</option>
+              <option value="1.0">1.0</option>
               <option value="1.1">1.1</option>
               <option value="1.2">1.2</option>
               <option value="1.3">1.3</option>
@@ -99,7 +101,7 @@ class EditReview extends React.Component {
               <option value="1.7">1.7</option>
               <option value="1.8">1.8</option>
               <option value="1.9">1.9</option>
-              <option value="2">2.0</option>
+              <option value="2.0">2.0</option>
               <option value="2.1">2.1</option>
               <option value="2.2">2.2</option>
               <option value="2.3">2.3</option>
@@ -119,7 +121,7 @@ class EditReview extends React.Component {
               <option value="3.7">3.7</option>
               <option value="3.8">3.8</option>
               <option value="3.9">3.9</option>
-              <option value="4">4.0</option>
+              <option value="4.0">4.0</option>
               <option value="4.1">4.1</option>
               <option value="4.2">4.2</option>
               <option value="4.3">4.3</option>
@@ -137,7 +139,7 @@ class EditReview extends React.Component {
               value={parseInt(this.state.reviewForm).guilt}
               onChange={this.handleFormChange}
               name="guilt">
-              <option value="0.0">Edit Your Guilt Score</option>
+              <option value="0.0">{this.state.reviewForm.guilt}</option>
               <option value="0.1">0.1</option>
               <option value="0.2">0.2</option>
               <option value="0.3">0.3</option>
@@ -192,9 +194,10 @@ class EditReview extends React.Component {
             <p>Cost Score:</p>
             <select
               value={parseInt(this.state.reviewForm).cost}
+              // placeholder={this.state.reviewForm.cost}
               onChange={this.handleFormChange}
               name="cost">
-              <option value="0.0">Edit Your Cost Score</option>
+              <option value="0.0">{this.state.reviewForm.cost}</option>
               <option value="0.1">0.1</option>
               <option value="0.2">0.2</option>
               <option value="0.3">0.3</option>
@@ -258,19 +261,19 @@ class EditReview extends React.Component {
             <div>
               <button>Submit</button>
             </div>
-            
+
 
           </form>
         </div >
         <div className="bag-pic-review">
           <img src={this.state.chip.bag_pic_url} />
           <div id="delete-button-form">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Skull_and_Crossbones.svg/440px-Skull_and_Crossbones.svg.png" />
-              <button
-                onClick={this.deleteReview}
-              >Delete Your Quip</button>
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Skull_and_Crossbones.svg/440px-Skull_and_Crossbones.svg.png" />
-            </div>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Skull_and_Crossbones.svg/440px-Skull_and_Crossbones.svg.png" />
+            <button
+              onClick={this.deleteReview}
+            >Delete Your Quip</button>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Skull_and_Crossbones.svg/440px-Skull_and_Crossbones.svg.png" />
+          </div>
         </div>
       </div>
     )

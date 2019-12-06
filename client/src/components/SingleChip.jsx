@@ -15,7 +15,8 @@ export default class SingleChip extends React.Component {
       guiltAverage: null,
       costAverage: null,
       tasteAverage: null,
-      categories: ""
+      categories: "",
+      tasty: ""
     }
   }
 
@@ -26,6 +27,14 @@ export default class SingleChip extends React.Component {
     this.reviewAverage(reviews)
     this.setState({ chip, reviews })
   }
+
+  // stars(number) {
+  //   if (number <= 3) {
+  //     this.setState({
+  //       tasty: "sup"
+  //     })
+  //   }
+  // }
 
   reviewAverage(reviews) {
     if (reviews.length === 0) {
@@ -87,9 +96,8 @@ export default class SingleChip extends React.Component {
                 id="sc-categories-select"
                 value={this.state.categories}
                 onChange={this.handleChange}
-                name="categories"
-              >
-                <option value="">What Do Catgories Mean</option>
+                name="categories">
+                <option value="">What Do Categories Mean</option>
                 <option value="show">Show me</option>
               </select>
               {
@@ -107,7 +115,7 @@ export default class SingleChip extends React.Component {
                     <div id="review">
                       <React.Fragment key={this.props.chipId}>
                         <Link to={`/chips/${this.props.chipId}/review`}>
-                          <h3>Click here to Quip about {this.state.chip.name}</h3>
+                          <button>Quip Here</button>
                         </Link>
                       </React.Fragment>
                     </div>
@@ -127,7 +135,7 @@ export default class SingleChip extends React.Component {
             {this.state.reviews.map(review => (
               <React.Fragment key={review.id}>
                 <div id="sc-each-review">
-                  <p>Taste: {review.taste}</p>
+                  <p>Taste:{review.taste }</p>
                   <p>Guilt: {review.guilt}</p>
                   <p>Cost: {review.cost}</p>
                   <p>Quip: {review.review}</p>

@@ -36,18 +36,7 @@ const Login = (props) => {
           <Link to="/register"><button>Go to Register</button></Link>
         </form>
       </div>
-      <ul class="bg-bubbles">
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-      </ul>
+      
     </div>
   );
 }
