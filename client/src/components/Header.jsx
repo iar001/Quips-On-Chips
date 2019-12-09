@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom'
 export default function Header(props) {
   return (
     <header class="header">
-      <div>
+      <div id="quips-on-chips-header">
         <h1><Link to='/' onClick={props.resetForm}>Quips on Chips</Link></h1>
       </div>
-      <div>
+      <div class="login-button-header">
         {props.currentUser
           ?
           <>

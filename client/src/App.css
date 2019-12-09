@@ -144,7 +144,7 @@ img {
 }
 
 h1, h2, h3 {
-  font-family: 'Maven Pro', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+  font-family: 'Maven Pro', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* Single Chip List Styling */
@@ -214,8 +214,8 @@ h1, h2, h3 {
   color: white;
 }
 
-#sc-categories {
-}
+/* #sc-categories {
+} */
 
 .user-review-title {
   text-align: center;
@@ -224,7 +224,7 @@ h1, h2, h3 {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   text-align: center;
-  font-family: 'Maven Pro', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+  font-family: 'Maven Pro', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
 }
 
@@ -284,7 +284,7 @@ button {
   }
 
   #login-shape {
-    display: flex
+    display: flex;
   }
 
   #login-shape p {
@@ -295,7 +295,7 @@ button {
     height: 50px;
     width: 75px;
     line-height: 50px;
-    background: forestgreen
+    background: forestgreen;
   }
 
   #logout-button:hover{

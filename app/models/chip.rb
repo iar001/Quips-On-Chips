@@ -4,18 +4,27 @@ class Chip < ApplicationRecord
 
   def taste_average
     @amount = reviews.count
+    if @amount == 0
+      @amount = 1
+    end
     @total = reviews.reduce(0) {|sum, review| sum + review[:taste] }
     @total/@amount
   end
 
   def cost_average
     @amount = reviews.count
+    if @amount == 0
+      @amount = 1
+    end
     @total = reviews.reduce(0) {|sum, review| sum + review[:cost] }
     @total/@amount
   end
 
   def guilt_average
     @amount = reviews.count
+    if @amount == 0
+      @amount = 1
+    end
     @total = reviews.reduce(0) {|sum, review| sum + review[:guilt]}
     @total/@amount
   end
