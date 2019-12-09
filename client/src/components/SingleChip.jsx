@@ -142,7 +142,7 @@ export default class SingleChip extends React.Component {
                     <p>Cost: {review.cost}</p>
                   </div>
                   <p>Quip: {review.review}</p>
-                 
+
                   {
                     this.props.currentUser && this.props.currentUser.id === review.user_id
                       ?
