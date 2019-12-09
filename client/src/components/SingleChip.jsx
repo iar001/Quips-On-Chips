@@ -27,17 +27,16 @@ export default class SingleChip extends React.Component {
     const reviews = await readAllReviews(chipId)
     // const username = reviews.user_id
     const users = await getAllUsers();
+    const user = await getOneUser(1)
+    console.log(user)
     this.reviewAverage(reviews)
     this.setState({ chip, reviews, users })
   }
 
-  // stars(number) {
-  //   if (number <= 3) {
-  //     this.setState({
-  //       tasty: "sup"
-  //     })
-  //   }
-  // }
+  getUsername = (id) => {
+    const user = getOneUser(id)
+    return user.username
+  }
 
   reviewAverage(reviews) {
     if (reviews.length === 0) {
@@ -170,14 +169,9 @@ export default class SingleChip extends React.Component {
           </div>
           <div className="sc-all-reviews">
             {this.state.reviews.map(review => (
-              <React.Fragment key={review.id}>
+              < React.Fragment key={review.id} >
                 <div id="sc-each-review">
                   <div id="user-scores">
-                    {/* <p>
-                      User: {
-                        this.state.users{ review.user_id }
-                    }
-                    </p> */}
                     <p>Taste:{review.taste}</p>
                     <p>Guilt: {review.guilt}</p>
                     <p>Cost: {review.cost}</p>
@@ -200,7 +194,7 @@ export default class SingleChip extends React.Component {
             ))}
           </div>
         </div>
-      </div>
+      </div >
     )
   }
 }

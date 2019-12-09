@@ -18,6 +18,7 @@ Quips on Chips
 
 ​	I expect to have challenges designing the site in an appealing way, as well as making sure my foundation of back/front end are solid. I also think it will be a challenge to figure out how to manipulate data in database to create averages of ratings. 
 
+I was able to render the site in a way that I am happy with.  I tested it with friends and family and they also were impressed with the professional look.
 
 
 ​	Clearly define MVP and post MVP
@@ -30,6 +31,7 @@ Quips on Chips
 
 ​	I’d like a search feature on the homepage that enables a user to find the specific snack they are looking for. I’d also like to have a feature that allows users to arrange snacks according to different features (best tasting, cost, etc). I would also like to give users the ability to add new snacks to the site. Further, I’d like for user to be able to add a review directly on the individual snack page, as opposed to going to a different page, for better user experience. 
 
+I was able to add the sort feature to arrange the snacks based on the the three main categories.  
 
 
 **Feature List**
