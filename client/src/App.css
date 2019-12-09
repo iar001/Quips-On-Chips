@@ -150,7 +150,8 @@ h1, h2, h3 {
 /* Single Chip List Styling */
 
 .sc {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   justify-content: space-evenly;
   background-color: rgb(42, 95, 70);
 }
@@ -199,6 +200,10 @@ h1, h2, h3 {
   background-color: #2980b9;
   color: white;
   transform: rotateY(180deg);
+}
+
+#rating-explanation {
+  margin-left: 10%;
 }
 
 #sc-ratings {

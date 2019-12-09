@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-// const baseUrl = 'http://localhost:3000'
-const baseUrl = 'https://quips-on-chips.herokuapp.com'
+const baseUrl = 'http://localhost:3000'
+// const baseUrl = 'https://quips-on-chips.herokuapp.com/'
 
 const api = axios.create({
   baseURL: baseUrl
@@ -34,6 +34,9 @@ export const verifyUser = async () => {
 ///////CHIPS//////////
 export const getAllChips = async () => {
   const resp = await api.get('/chips');
+  // const resp = await axios.get('https://quips-on-chips.herokuapp.com/chips')
+  // debugger
+  console.log(resp)
   return resp.data
 }
 

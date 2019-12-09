@@ -66,6 +66,17 @@ export default class SingleChip extends React.Component {
       [name]: value
     }))
   }
+  handleChangeButton = (e) => {
+    if (this.state.categories === "") {
+      this.setState({
+        categories: "show"
+      })
+    } else {
+      this.setState({
+        categories: ""
+      })
+    }
+  }
 
 
   render() {
@@ -84,6 +95,29 @@ export default class SingleChip extends React.Component {
               </div>
             </div>
           </div>
+          <div id="rating-explanation">
+            {/* <select
+              id="sc-categories-select"
+              value={this.state.categories}
+              onChange={this.handleChange}
+              name="categories">
+              <option value="">What Do Categories Mean</option>
+              <option value="show">Show me</option>
+            </select> */}
+            <button
+              onClick={this.handleChangeButton}
+            >
+              Show Categories
+            </button>
+            {
+              this.state.categories === "show" &&
+              <div>
+                <p>Taste: Higher the score, better the flavor</p>
+                <p>Cost: Higher the score, more expensive the item</p>
+                <p>Guilt: Higher the score, bigger the regret</p>
+              </div>
+            }
+          </div>
 
           <div id="sc-ratings">
             <div>
@@ -93,14 +127,7 @@ export default class SingleChip extends React.Component {
               <h3>Taste: {this.state.tasteAverage} </h3>
               <h3>Cost: {this.state.costAverage}</h3>
               <h3>Guilt: {this.state.guiltAverage} </h3>
-              <select
-                id="sc-categories-select"
-                value={this.state.categories}
-                onChange={this.handleChange}
-                name="categories">
-                <option value="">What Do Categories Mean</option>
-                <option value="show">Show me</option>
-              </select>
+{/* 
               {
                 this.state.categories === "show" &&
                 <div>
@@ -108,7 +135,7 @@ export default class SingleChip extends React.Component {
                   <p>Cost: Higher the score, more expensive the item</p>
                   <p>Guilt: Higher the score, bigger the regret</p>
                 </div>
-              }
+              } */}
               {
                 this.props.currentUser
                   ?
@@ -122,7 +149,13 @@ export default class SingleChip extends React.Component {
                     </div>
                   </>
                   :
-                  <p>Sign in and the ability to Quip will magically appear here</p>
+
+                  <React.Fragment key={this.props.chipId}>
+                    <p>Sign in and the ability to Quip will magically appear here</p>
+                    <Link to={`/login`}>
+                      <button>Log In</button>
+                    </Link>
+                  </React.Fragment>
               }
             </div>
           </div>

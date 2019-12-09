@@ -51,9 +51,15 @@ class App extends Component {
     const sortedFlavorChips = await chipsFlavorSort()
     const sortedCostChips = await chipsCostSort()
     const sortedGuiltChips = await chipsGuiltSort()
-    if (currentUser) {
-      this.setState({ currentUser, chips, sortedFlavorChips, sortedCostChips, sortedGuiltChips })
-    }
+    // if (currentUser) {
+    this.setState({
+      currentUser,
+      chips,
+      sortedFlavorChips,
+      sortedCostChips,
+      sortedGuiltChips
+    })
+    // }
   }
 
   //-------------- Reviews ------------------
