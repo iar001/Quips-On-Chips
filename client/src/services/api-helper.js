@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-// const baseUrl = 'http://localhost:3000'
-const baseUrl = 'https://quips-on-chips.herokuapp.com/'
+const baseUrl = 'http://localhost:3000'
+// const baseUrl = 'https://quips-on-chips.herokuapp.com/'
 
 const api = axios.create({
   baseURL: baseUrl
@@ -66,7 +66,7 @@ export const createReview = async (id, formData) => {
   return resp.data
 }
 
-export const oneReview = async(id) => {
+export const oneReview = async (id) => {
   const resp = await api.get(`/reviews/${id}`)
   return resp.data
 }
@@ -88,3 +88,12 @@ export const destroyReview = async (id) => {
 
 /////Users
 
+export const getAllUsers = async () => {
+  const resp = await api.get('/users')
+  return resp.data
+}
+
+export const getOneUser = async (id) => {
+  const resp = await api.get(`/users/${id}`)
+  return resp.data
+}

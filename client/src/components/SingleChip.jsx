@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import { Link, withRouter } from 'react-router-dom';
-import { oneSnack, readAllReviews } from '../services/api-helper'
+import { oneSnack, readAllReviews, getAllUsers, getOneUser } from '../services/api-helper'
 import { updateReview } from './CreateReview'
 import EditReview from './EditReview';
 
@@ -16,7 +16,8 @@ export default class SingleChip extends React.Component {
       costAverage: null,
       tasteAverage: null,
       categories: "",
-      tasty: ""
+      tasty: "",
+      users: []
     }
   }
 
@@ -24,8 +25,10 @@ export default class SingleChip extends React.Component {
     const chipId = parseInt(this.props.chipId)
     const chip = await oneSnack(chipId)
     const reviews = await readAllReviews(chipId)
+    // const username = reviews.user_id
+    const users = await getAllUsers();
     this.reviewAverage(reviews)
-    this.setState({ chip, reviews })
+    this.setState({ chip, reviews, users })
   }
 
   // stars(number) {
@@ -127,7 +130,7 @@ export default class SingleChip extends React.Component {
               <h3>Taste: {this.state.tasteAverage} </h3>
               <h3>Cost: {this.state.costAverage}</h3>
               <h3>Guilt: {this.state.guiltAverage} </h3>
-{/* 
+              {/* 
               {
                 this.state.categories === "show" &&
                 <div>
@@ -170,6 +173,11 @@ export default class SingleChip extends React.Component {
               <React.Fragment key={review.id}>
                 <div id="sc-each-review">
                   <div id="user-scores">
+                    {/* <p>
+                      User: {
+                        this.state.users{ review.user_id }
+                    }
+                    </p> */}
                     <p>Taste:{review.taste}</p>
                     <p>Guilt: {review.guilt}</p>
                     <p>Cost: {review.cost}</p>
