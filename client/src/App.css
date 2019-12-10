@@ -62,7 +62,15 @@ a:visited  {
   animation: 
     typing 3.5s steps(30, end),
     blink-caret .5s step-end infinite;
+}
 
+#arrow-down {
+  color: white;
+  font-size: 4em;
+  position: absolute;
+  top: -9%;
+  left: 65%;
+  z-index: 1;
 }
 
 
@@ -77,14 +85,7 @@ a:visited  {
   50% { border-color: orange; }
 }
 
-#arrow-down {
-  color: white;
-  font-size: 4em;
-  position: absolute;
-  top: -9%;
-  left: 65%;
-  z-index: 1;
-}
+
 
 .animated {
   animation-duration: 2.5s;
@@ -459,6 +460,14 @@ button {
         display: none
       }
 
+      #chips-div {
+        margin-top: 25%
+      }
+
+      .cover-img-div {
+        display: none;
+      }
+
       /* Header everywhere */
       #quips-on-chips-header {
           font-size: small;
@@ -522,6 +531,10 @@ button {
     /* create review page */
       .bag-pic-review {
         display: none;
+      }
+
+      .create-form {
+        margin-right: 20px;
       }
 
       /* .form {

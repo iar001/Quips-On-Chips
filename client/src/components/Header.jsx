@@ -25,7 +25,7 @@ export default function Header(props) {
           :
           <button
             id="login-button"
-            onClick={props.handleLoginButton}>Login or Register</button>
+            onClick={props.handleLoginButton}>Login/Register</button>
         }
       </div>
     </header>
