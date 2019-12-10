@@ -184,13 +184,16 @@ export default class SingleChip extends React.Component {
                       {review.guilt}</p>
                     <p>
                       <span class="blue">
-                        Cost:
+                        Costb:
                       </span>
                       {review.cost}</p>
                   </div>
                   <p>
                     <span class="blue">
-                      {review.user.username}
+                      {review.user.username} {" "}
+                    </span>
+                    <span>
+                       
                     </span>
                     Quips: {review.review}</p>
 
