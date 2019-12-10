@@ -48,8 +48,9 @@ a:visited  {
 }
 
 #cover-img-h1 {
-  top: 3%;
+  top: -5%;
   left: 25%;
+  z-index: 1;
   position: absolute;
   color: red;
   font-family: monospace; /* Web-safe typewriter-like font */
@@ -63,6 +64,8 @@ a:visited  {
     blink-caret .5s step-end infinite;
 
 }
+
+
 @keyframes typing {
   from { width: 0 }
   to { width: 37% }
@@ -78,8 +81,9 @@ a:visited  {
   color: white;
   font-size: 4em;
   position: absolute;
-  top: 0%;
+  top: -9%;
   left: 65%;
+  z-index: 1;
 }
 
 .animated {
@@ -104,6 +108,20 @@ a:visited  {
   margin-top: 0;
   margin-bottom: 3vh; 
   padding-bottom: 2vh;
+}
+
+#chips-sort-select {
+  margin: 20px auto;
+  display: block;
+  width: 50%;
+  min-width: 400px;
+  height: 40px;
+  border: 2px solid green;
+}
+
+#chips-sort-select:hover {
+  cursor: pointer;
+  border-color: yellowgreen;
 }
 
 .chips-list-div {
