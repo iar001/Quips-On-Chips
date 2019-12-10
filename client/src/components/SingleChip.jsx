@@ -17,8 +17,6 @@ export default class SingleChip extends React.Component {
       tasteAverage: null,
       categories: "",
       tasty: "",
-      user: ""
-      // users: []
     }
   }
 
@@ -26,23 +24,9 @@ export default class SingleChip extends React.Component {
     const chipId = parseInt(this.props.chipId)
     const chip = await oneSnack(chipId)
     const reviews = await readAllReviews(chipId)
-    // const username = reviews.user_id
-    // const users = await getAllUsers();
-    // const sup = await getOneUser(2)
-    // console.log(sup.username)
-    // const bla = this.getUsername(2)
-    // console.log(bla)
-    // this.getUsername();
+ 
     this.reviewAverage(reviews)
     this.setState({ chip, reviews })
-  }
-
-  async getUsername(id) {
-    const user = await getOneUser(id)
-    return user.username
-    // this.setState({
-    //   user: user.username
-    // })
   }
 
   reviewAverage(reviews) {
