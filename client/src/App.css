@@ -428,14 +428,7 @@ button {
       }
 
       /* single chip page */
-      .sc-review {
-        display: block;
-      }
-
-      .sc-all-reviews {
-        display: block;
-      }
-
+      
       .sc {
         display: grid;
         grid-template-columns: 1fr
@@ -447,24 +440,35 @@ button {
 
       #sc-ratings {
         margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr; 
       }
 
-      #sc-categories {
-        margin-left: 60px;
-        display: block
+      #sc-ratings h1 {
+        margin: 0 auto;
+        text-align: center;
+      }
+      
+      #sc-categories{
+        margin: 0 auto;
       }
 
       #sc-categories h3 {
-        margin-left: 30px;
+        text-align: center;
       }
-      /* #sc-ratings {
-        margin: 0 auto;
-      } */
 
-      /*  */
-      #review {
-        /* margin-left: 60px; */
+      .sc-review {
+        display: block;
       }
+
+      .sc-all-reviews {
+        display: grid;
+        grid-template-columns: 1fr;
+        width: 100vw;
+      }
+
+    
+      
 
      
       
