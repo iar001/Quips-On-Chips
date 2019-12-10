@@ -55,7 +55,7 @@ class EditReview extends React.Component {
     this.setState(prevState => ({
       reviews: prevState.reviews.filter(review => review.id !== this.props.match.params.reviewId)
     }))
-    this.props.history.push('/')
+    this.props.history.push(`/chips/${this.props.chipId}`)
   }
 
   handleFormChange = (e) => {

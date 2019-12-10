@@ -112,10 +112,13 @@ a:visited  {
   margin: 10px;
 }
 
-.chips-img:hover {
-  transform: scale(1.1);
-  border: 5px solid black;
-}
+/* .chips-list-div-each {
+  border: 5px solid black;} */
+
+/* .chips-list-div img:hover {
+  transform: scale(1);
+  border: 2px solid black;
+} */
 
 img {
   width: 100%;
@@ -425,6 +428,11 @@ button {
 
       #arrow-down {
         display: none
+      }
+
+      /* Header everywhere */
+      #quips-on-chips-header {
+          font-size: small;
       }
 
       /* single chip page */

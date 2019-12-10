@@ -21,7 +21,7 @@ class ChipsList extends React.Component {
 
     return (
       <div id="chips-div">
-        
+
         <select
           id="chips-sort-select"
           value={this.state.sorted}
@@ -36,10 +36,13 @@ class ChipsList extends React.Component {
           <div className="chips-list-div">
             {this.props.chips.map(chip => (
               <React.Fragment key={chip.id}>
-                <Link to={`/chips/${chip.id}`}>
-                  <img className="chip-img" src={chip.bag_pic_url} />
-                  <h3>{chip.name}</h3>
-                </Link>
+                <div class="chips-list-div-each">
+                  <Link to={`/chips/${chip.id}`}>
+                    <img className="chip-img" src={chip.bag_pic_url} alt={chip.name} />
+                    <h3>{chip.name}</h3>
+                  </Link>
+                </div>
+
               </React.Fragment>
             ))}
           </div>
