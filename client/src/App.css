@@ -434,6 +434,10 @@ button {
       #quips-on-chips-header {
           font-size: small;
       }
+      
+      /* header {
+        height: 15vh;
+      } */
 
       /* single chip page */
       
@@ -497,7 +501,7 @@ button {
         width: 100%;
         height: 700px;
         margin-top: -289px;
-        overflow: hidden;
+        /* overflow: hidden; */
       }
       .create-form {
         max-width: 600px;
@@ -505,19 +509,13 @@ button {
         padding: 0px 0;
         text-align: center;
       }
-      /* .create-form form {
-        display: block;
-        margin-top: 0em;
-      }
-      .create-form p {
-        display: none;
-        margin: 0 auto;
-      }
-      .create-form select {
-        width: 100%;
-      } */
 
       
+
+     
+
+      /* login and register page */
+
 
      
       
