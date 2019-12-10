@@ -244,6 +244,10 @@ h1, h2, h3 {
   justify-content: space-evenly;
 }
 
+.blue {
+  color: blue;
+}
+
 #delete-button-form {
   display: flex;
   /* margin-left: 50px; */

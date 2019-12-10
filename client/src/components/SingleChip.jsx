@@ -171,12 +171,28 @@ export default class SingleChip extends React.Component {
               < React.Fragment key={review.id} >
                 <div id="sc-each-review">
                   <div id="user-scores">
-                    <p>{review.user.username}</p>
-                    <p>Taste:{review.taste}</p>
-                    <p>Guilt: {review.guilt}</p>
-                    <p>Cost: {review.cost}</p>
+                    <p>
+                      <span class="blue">
+                        Taste:
+                      </span>
+                      {review.taste}</p>
+                    <p>
+                      <span class="blue">
+                        Guilt:
+                      </span>
+
+                      {review.guilt}</p>
+                    <p>
+                      <span class="blue">
+                        Cost:
+                      </span>
+                      {review.cost}</p>
                   </div>
-                  <p>Quip: {review.review}</p>
+                  <p>
+                    <span class="blue">
+                      {review.user.username}
+                    </span>
+                    Quips: {review.review}</p>
 
                   {
                     this.props.currentUser && this.props.currentUser.id === review.user_id
