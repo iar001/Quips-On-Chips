@@ -6,7 +6,7 @@ class ChipsController < ApplicationController
   # GET /chips
   def index
     @chips = Chip.all
-
+    
     render json: @chips
   end
 
@@ -14,7 +14,7 @@ class ChipsController < ApplicationController
   def show
     render json: @chip
   end
-  
+
 
   def chips_by_taste
     @chips = Chip.all

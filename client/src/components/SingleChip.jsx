@@ -99,7 +99,7 @@ export default class SingleChip extends React.Component {
                   <img src={this.state.chip.bag_pic_url} />
                 </div>
                 <div id="sc-image-back">
-                  <img src={this.state.chip.chip_pic_url} alt="these should be chips"/>
+                  <img src={this.state.chip.chip_pic_url} alt="these should be chips" />
                 </div>
               </div>
             </div>
@@ -142,13 +142,14 @@ export default class SingleChip extends React.Component {
                     </div>
                   </>
                   :
-
-                  <React.Fragment key={this.props.chipId}>
-                    <p>Sign in and the ability to Quip will magically appear here</p>
-                    <Link to={`/login`}>
-                      <button>Log In</button>
-                    </Link>
-                  </React.Fragment>
+                  <div id="review">
+                    <React.Fragment key={this.props.chipId}>
+                      <p>Sign in and the ability to Quip will magically appear here</p>
+                      <Link to={`/login`}>
+                        <button>Log In</button>
+                      </Link>
+                    </React.Fragment>
+                  </div>
               }
             </div>
           </div>
@@ -185,7 +186,7 @@ export default class SingleChip extends React.Component {
                       {review.user.username} {" "}
                     </span>
                     <span>
-                       
+
                     </span>
                     Quips: {review.review}</p>
 
