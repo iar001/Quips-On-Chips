@@ -128,15 +128,7 @@ export default class SingleChip extends React.Component {
               <h3>Taste: {this.state.tasteAverage} </h3>
               <h3>Cost: {this.state.costAverage}</h3>
               <h3>Guilt: {this.state.guiltAverage} </h3>
-              {/* 
-              {
-                this.state.categories === "show" &&
-                <div>
-                  <p>Taste: Higher the score, better the flavor</p>
-                  <p>Cost: Higher the score, more expensive the item</p>
-                  <p>Guilt: Higher the score, bigger the regret</p>
-                </div>
-              } */}
+
               {
                 this.props.currentUser
                   ?

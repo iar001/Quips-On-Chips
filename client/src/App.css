@@ -214,8 +214,6 @@ h1, h2, h3 {
   color: white;
 }
 
-/* #sc-categories {
-} */
 
 .user-review-title {
   text-align: center;
@@ -413,3 +411,61 @@ button {
         color: @prim;
       }
     }
+
+    @media only screen 
+    and (min-device-width : 375px) 
+    and (max-device-width : 812px)
+    and (-webkit-device-pixel-ratio : 3) { 
+
+
+      /* //front page header */
+      #cover-img-h1 {
+        display: none;
+      }
+
+      #arrow-down {
+        display: none
+      }
+
+      /* single chip page */
+      .sc-review {
+        display: block;
+      }
+
+      .sc-all-reviews {
+        display: block;
+      }
+
+      .sc {
+        display: grid;
+        grid-template-columns: 1fr
+      }
+
+      #rating-explanation {
+        margin: 0 auto;
+      }
+
+      #sc-ratings {
+        margin: 0 auto;
+      }
+
+      #sc-categories {
+        margin-left: 60px;
+        display: block
+      }
+
+      #sc-categories h3 {
+        margin-left: 30px;
+      }
+      /* #sc-ratings {
+        margin: 0 auto;
+      } */
+
+      /*  */
+      #review {
+        /* margin-left: 60px; */
+      }
+
+     
+      
+      /* STYLES GO HERE */}
