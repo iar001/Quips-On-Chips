@@ -99,7 +99,7 @@ export default class SingleChip extends React.Component {
                   <img src={this.state.chip.bag_pic_url} />
                 </div>
                 <div id="sc-image-back">
-                  <img src={this.state.chip.chip_pic_url} />
+                  <img src={this.state.chip.chip_pic_url} alt="these should be chips"/>
                 </div>
               </div>
             </div>
@@ -184,7 +184,7 @@ export default class SingleChip extends React.Component {
                       {review.guilt}</p>
                     <p>
                       <span class="blue">
-                        Costb:
+                        Cost:
                       </span>
                       {review.cost}</p>
                   </div>
