@@ -17,7 +17,8 @@ export default class SingleChip extends React.Component {
       tasteAverage: null,
       categories: "",
       tasty: "",
-      users: []
+      user: ""
+      // users: []
     }
   }
 
@@ -26,16 +27,22 @@ export default class SingleChip extends React.Component {
     const chip = await oneSnack(chipId)
     const reviews = await readAllReviews(chipId)
     // const username = reviews.user_id
-    const users = await getAllUsers();
-    const user = await getOneUser(1)
-    console.log(user)
+    // const users = await getAllUsers();
+    // const sup = await getOneUser(2)
+    // console.log(sup.username)
+    // const bla = this.getUsername(2)
+    // console.log(bla)
+    // this.getUsername();
     this.reviewAverage(reviews)
-    this.setState({ chip, reviews, users })
+    this.setState({ chip, reviews })
   }
 
-  getUsername = (id) => {
-    const user = getOneUser(id)
+  async getUsername(id) {
+    const user = await getOneUser(id)
     return user.username
+    // this.setState({
+    //   user: user.username
+    // })
   }
 
   reviewAverage(reviews) {
@@ -98,14 +105,6 @@ export default class SingleChip extends React.Component {
             </div>
           </div>
           <div id="rating-explanation">
-            {/* <select
-              id="sc-categories-select"
-              value={this.state.categories}
-              onChange={this.handleChange}
-              name="categories">
-              <option value="">What Do Categories Mean</option>
-              <option value="show">Show me</option>
-            </select> */}
             <button
               onClick={this.handleChangeButton}
             >
@@ -172,6 +171,7 @@ export default class SingleChip extends React.Component {
               < React.Fragment key={review.id} >
                 <div id="sc-each-review">
                   <div id="user-scores">
+                    <p>{review.user.username}</p>
                     <p>Taste:{review.taste}</p>
                     <p>Guilt: {review.guilt}</p>
                     <p>Cost: {review.cost}</p>

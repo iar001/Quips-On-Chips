@@ -14,6 +14,7 @@ class ChipsController < ApplicationController
   def show
     render json: @chip
   end
+  
 
   def chips_by_taste
     @chips = Chip.all

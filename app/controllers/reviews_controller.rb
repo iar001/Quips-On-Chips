@@ -6,13 +6,13 @@ class ReviewsController < ApplicationController
   # GET /reviews
   def index
     @reviews = Review.all
-
-    render json: @reviews
+    
+    render json: @reviews, include: :user
   end
 
   # GET /reviews/1
   def show
-    render json: @review
+    render json: @review, include: :user
   end
 
   # POST /reviews
@@ -30,7 +30,7 @@ class ReviewsController < ApplicationController
   def index_by_chips
     @chip = Chip.find(params[:chip_id])
     @reviews = @chip.reviews
-    render json: @reviews, include: :chip, status: :ok
+    render json: @reviews, include: [:chip, :user], status: :ok
   end
 
   def index_by_chip_and_user

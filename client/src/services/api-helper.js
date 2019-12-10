@@ -34,9 +34,6 @@ export const verifyUser = async () => {
 ///////CHIPS//////////
 export const getAllChips = async () => {
   const resp = await api.get('/chips');
-  // const resp = await axios.get('https://quips-on-chips.herokuapp.com/chips')
-  // debugger
-  console.log(resp)
   return resp.data
 }
 

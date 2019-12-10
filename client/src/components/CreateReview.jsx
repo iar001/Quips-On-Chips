@@ -244,7 +244,7 @@ class CreateReview extends React.Component {
           </form>
         </div >
         <div className="bag-pic-review">
-          <img src={this.state.chip.bag_pic_url}/>
+          <img src={this.state.chip.bag_pic_url} />
         </div>
       </div>
     )
