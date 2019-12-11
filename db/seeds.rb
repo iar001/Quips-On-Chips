@@ -11,7 +11,7 @@ chips = Chip.create([
   {
     name: "Nacho Cheese Doritos",
     bag_pic_url: "https://i5.walmartimages.com/asr/6c575e3b-b2c0-44b1-9d17-44490facdc33_1.23b7b509f2e3b1ab4bb0ba19a40f258c.jpeg",
-    chip_pic_url: "https://timedotcom.files.wordpress.com/2019/03/doritos-nacho-cheese-best-chip-flavor.jpg"
+    chip_pic_url: "https://www.foodservicedirect.com/media/catalog/product/cache/f4ff5e8081d8e52f84a2ea6986aee80a/h/t/httpss3.amazonaws.comfoodservicedirect.comlargeoriginalimages00028400205184.jpg"
   },
   {
     name: "Cool Ranch Doritos",
