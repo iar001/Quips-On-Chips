@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-// const baseUrl = 'http://localhost:3000'
-const baseUrl = 'https://quips-on-chips.herokuapp.com'
+const baseUrl = 'http://localhost:3000'
+// const baseUrl = 'https://quips-on-chips.herokuapp.com'
 
 const api = axios.create({
   baseURL: baseUrl

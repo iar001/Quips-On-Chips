@@ -1,6 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import { updateReview, destroyReview, oneSnack } from '../services/api-helper';
+import { updateReview, destroyReview, oneSnack, oneReview } from '../services/api-helper';
 import axios from 'axios';
 
 
@@ -20,15 +20,17 @@ class EditReview extends React.Component {
   }
 
   async componentDidMount() {
-    const response = await axios.get(`http://localhost:3000/reviews/${this.props.match.params.reviewId}`)
-    const mountReview = response.data
+    // const response = await axios.get(`http://localhost:3000/reviews/${this.props.match.params.reviewId}`)
+    const response = await oneReview(parseInt(this.props.match.params.reviewId))
+    console.log(response)
+    // const mountReview = response.data
     const chip = await oneSnack(this.props.chipId)
     this.setState({
       reviewForm: {
-        cost: mountReview.cost,
-        taste: mountReview.taste,
-        guilt: mountReview.guilt,
-        review: mountReview.review
+        cost: response.cost,
+        taste: response.taste,
+        guilt: response.guilt,
+        review: response.review
       },
       chip
     })
