@@ -9,6 +9,8 @@ class ChipsList extends React.Component {
     }
   }
 
+  
+
   handleChange = (e) => {
     const { name, value } = e.target;
     this.setState(prevState => ({

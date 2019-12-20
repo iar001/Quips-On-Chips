@@ -34,6 +34,7 @@ export const verifyUser = async () => {
 ///////CHIPS//////////
 export const getAllChips = async () => {
   const resp = await api.get('/chips');
+  console.log(resp.data)
   return resp.data
 }
 
